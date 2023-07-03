@@ -1,0 +1,238 @@
+fileFormatVersion: 2
+guid: 3297622c5b551024d867443c3e244a02
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: mug
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 241
+        width: 111
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05046e6bc3de87740bd2c2b8fb17c46d
+      internalID: -2031139677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: espresso
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 864
+        width: 101
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e5373a8fb788f04fabab33cba029c2e
+      internalID: 1166798752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      A_0001_Recipe_15: 530894992
+      A_0001_Recipe_3: 957151468
+      A_0001_Recipe_5: 480218064
+      A_0001_Recipe_11: 1316946931
+      A_0001_Recipe_51: -320375981
+      A_0001_Recipe_4: 143483865
+      A_0001_Recipe_42: -155015030
+      A_0001_Recipe_18: -392777380
+      A_0001_Recipe_47: -799402654
+      A_0001_Recipe_17: -2001677967
+      A_0001_Recipe_26: -1270248839
+      A_0001_Recipe_40: 1726376078
+      A_0001_Recipe_39: -1800849520
+      A_0001_Recipe_20: -961596134
+      mug: -2031139677
+      A_0001_Recipe_49: -1078994040
+      A_0001_Recipe_48: -2021811908
+      A_0001_Recipe_22: 321459487
+      A_0001_Recipe_59: 1623152640
+      A_0001_Recipe_8: 118167021
+      A_0001_Recipe_55: 1187771716
+      espresso: 1166798752
+      A_0001_Recipe_31: 2068922841
+      A_0001_Recipe_54: -1636210713
+      A_0001_Recipe_58: -745377252
+      A_0001_Recipe_6: 1749548297
+      A_0001_Recipe_7: -2000749741
+      A_0001_Recipe_9: -1441449554
+      A_0001_Recipe_50: 1937870898
+      A_0001_Recipe_24: -384181820
+      A_0001_Recipe_35: -359231194
+      A_0001_Recipe_30: -473073094
+      A_0001_Recipe_25: -1827353749
+      A_0001_Recipe_53: -1145397945
+      A_0001_Recipe_38: 2122398955
+      A_0001_Recipe_12: 344502582
+      A_0001_Recipe_14: 359107240
+      A_0001_Recipe_16: 911013818
+      A_0001_Recipe_52: -1514185801
+      A_0001_Recipe_29: -47181786
+      A_0001_Recipe_21: 1664915511
+      A_0001_Recipe_33: -504746250
+      A_0001_Recipe_19: 2014281432
+      A_0001_Recipe_36: -2122204549
+      A_0001_Recipe_28: -1429281456
+      A_0001_Recipe_23: 777268578
+      A_0001_Recipe_46: 132815378
+      A_0001_Recipe_34: -2035438784
+      A_0001_Recipe_27: 1652611666
+      A_0001_Recipe_32: 232247372
+      A_0001_Recipe_56: -997777498
+      A_0001_Recipe_1: 1579567517
+      A_0001_Recipe_45: 1968866336
+      A_0001_Recipe_10: 822288878
+      A_0001_Recipe_2: -804296497
+      A_0001_Recipe_41: 1891194746
+      A_0001_Recipe_43: 1164455630
+      A_0001_Recipe_57: 423645917
+      A_0001_Recipe_0: -1368593894
+      A_0001_Recipe_44: -212011001
+      A_0001_Recipe_13: 1200299639
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
