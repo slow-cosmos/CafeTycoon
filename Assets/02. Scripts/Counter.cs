@@ -10,7 +10,7 @@ public class Counter : MonoBehaviour
 
     public MenuType menuType;
 
-    public void OnMouseDown()
+    void OnMouseDown()
     {
         menuGenerate(menuType);
     }

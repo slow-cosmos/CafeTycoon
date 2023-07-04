@@ -37,6 +37,7 @@ public class MenuGenerator : MonoBehaviour
                     menu.AddComponent<IceCup>();
                     break;
             }
+            menu.AddComponent<BoxCollider>();
             holder.menu = menu;
         }
     }
