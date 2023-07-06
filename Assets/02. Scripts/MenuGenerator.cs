@@ -19,7 +19,7 @@ public class MenuGenerator : MonoBehaviour
         }
     }
 
-    void MakeMenu(MenuType cup)
+    void MakeMenu(CupType cup)
     {
         Holder holder = cupHolder.CanHold();
         if(holder != null)
@@ -27,13 +27,13 @@ public class MenuGenerator : MonoBehaviour
             GameObject menu = Instantiate(menuObject, holder.transform);
             switch(cup)
             {
-                case MenuType.EspressoCup:
+                case CupType.EspressoCup:
                     menu.AddComponent<EspressoCup>();
                     break;
-                case MenuType.MugCup:
+                case CupType.MugCup:
                     menu.AddComponent<MugCup>();
                     break;
-                case MenuType.IceCup:
+                case CupType.IceCup:
                     menu.AddComponent<IceCup>();
                     break;
             }

@@ -30,11 +30,6 @@ public class Picker : MonoBehaviour
         pickRecipeType = RecipeType.None;
     }
 
-    public void SetPick(Recipe recipe)
-    {
-        pickRecipeType = recipe.recipeType;
-    }
-
     public void SetPick(RecipeType recipe)
     {
         pickRecipeType = recipe;

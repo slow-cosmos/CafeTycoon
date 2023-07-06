@@ -230,7 +230,7 @@ TextureImporter:
         width: 96
         height: 95
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -251,7 +251,7 @@ TextureImporter:
         width: 88
         height: 166
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -259,6 +259,69 @@ TextureImporter:
       bones: []
       spriteID: 3deb1e08ff071e44584c8e2dfb761620
       internalID: 44997878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipe3_5
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 399
+        width: 95
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58ce32962aab008438ead00cfcb66f32
+      internalID: 818289019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipe3_6
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 523
+        width: 95
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b93a239a8799049ba0d1cca87b30af
+      internalID: -743272777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipe3_7
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 242
+        width: 109
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d8d864c2f0c8d43adbddf1f99cc1c2
+      internalID: -497047089
       vertices: []
       indices: 
       edges: []
@@ -278,6 +341,7 @@ TextureImporter:
       A_0001_Recipe_3: 957151468
       Recipe3_2: -1457255464
       A_0001_Recipe_5: 480218064
+      Recipe3_5: 818289019
       A_0001_Recipe_11: 1316946931
       A_0001_Recipe_51: -320375981
       Recipe3_4: 44997878
@@ -310,8 +374,9 @@ TextureImporter:
       Recipe3_1: -1241969344
       A_0001_Recipe_30: -473073094
       A_0001_Recipe_25: -1827353749
-      A_0001_Recipe_53: -1145397945
+      Recipe3_6: -743272777
       A_0001_Recipe_38: 2122398955
+      A_0001_Recipe_53: -1145397945
       Recipe3_3: -393455619
       A_0001_Recipe_12: 344502582
       A_0001_Recipe_14: 359107240
@@ -328,6 +393,7 @@ TextureImporter:
       A_0001_Recipe_34: -2035438784
       A_0001_Recipe_27: 1652611666
       A_0001_Recipe_32: 232247372
+      Recipe3_7: -497047089
       A_0001_Recipe_56: -997777498
       A_0001_Recipe_1: 1579567517
       A_0001_Recipe_45: 1968866336
@@ -337,8 +403,8 @@ TextureImporter:
       A_0001_Recipe_41: 1891194746
       A_0001_Recipe_43: 1164455630
       A_0001_Recipe_57: 423645917
-      A_0001_Recipe_0: -1368593894
       A_0001_Recipe_44: -212011001
+      A_0001_Recipe_0: -1368593894
       A_0001_Recipe_13: 1200299639
   spritePackingTag: 
   pSDRemoveMatte: 0

@@ -4,14 +4,14 @@ using UnityEngine;
 
 public enum RecipeType
 {
-    None,
-    Espresso,
-    GreenTea,
-    Water,
-    Milk,
-    HotMilk,
-    Ice,
-    Cream
+    None = 0,
+    Espresso = 1,
+    GreenTea = 2,
+    Water = 3,
+    Milk = 4,
+    HotMilk = 5,
+    Ice = 6,
+    Cream = 7
 }
 
 public class Recipe : MonoBehaviour
@@ -20,6 +20,6 @@ public class Recipe : MonoBehaviour
 
     void OnMouseDown()
     {
-        Picker.Instance.SetPick(this);
+        Picker.Instance.SetPick(recipeType);
     }
 }

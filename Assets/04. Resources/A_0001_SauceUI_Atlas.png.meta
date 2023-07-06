@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,133 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: A_0001_SauceUI_Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 226
+        width: 245
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27e36c4178ec3ea459952b38f336f028
+      internalID: -1278973965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_0001_SauceUI_Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 882
+        width: 196
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90cc22c6bac2dba4a84ac54bcf71309a
+      internalID: -385801184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_0001_SauceUI_Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 569
+        width: 214
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c520dc8c331b0479b47ea3f6527ded
+      internalID: 312837625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_0001_SauceUI_Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 455
+        width: 67
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56acd6befb4b42648a3a865dbacbf699
+      internalID: 1840177917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_0001_SauceUI_Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 691
+        width: 92
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d45d61f7cc5c74b97ae6e17dd27270
+      internalID: 102223398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: A_0001_SauceUI_Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 838
+        width: 78
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec5281fafb56a9429e4d6f02b327a05
+      internalID: -176748662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +252,13 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      A_0001_SauceUI_Atlas_0: -1278973965
+      A_0001_SauceUI_Atlas_4: 102223398
+      A_0001_SauceUI_Atlas_5: -176748662
+      A_0001_SauceUI_Atlas_2: 312837625
+      A_0001_SauceUI_Atlas_3: 1840177917
+      A_0001_SauceUI_Atlas_1: -385801184
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
