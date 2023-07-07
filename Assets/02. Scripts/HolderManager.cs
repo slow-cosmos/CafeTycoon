@@ -12,7 +12,7 @@ public class HolderManager : MonoBehaviour
 
     void Awake()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         HolderInit();
     }
 
@@ -33,5 +33,18 @@ public class HolderManager : MonoBehaviour
         }
         Debug.Log("자리 없음!");
         return null; // 없으면 null 반환
+    }
+
+    public List<Holder> CanHoldCoffee()
+    {
+        List<Holder> emptyHolders = new List<Holder>();
+        for(int i=0;i<holderCount;i++)
+        {
+            if(!holders[i].working && holders[i].menu == null)
+            {
+                emptyHolders.Add(holders[i]);
+            }
+        }
+        return emptyHolders;
     }
 }

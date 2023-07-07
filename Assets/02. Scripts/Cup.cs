@@ -18,7 +18,7 @@ public enum IngredientType
 }
 
 [System.Serializable]
-public class Dictionary : SerializableDictionary<IngredientType, RecipeType>{}
+public class Dictionary : SerializableDictionary<IngredientType, RecipeType>{} // dictionary 인스펙터 표시
 
 // 생성된 오브젝트
 public abstract class Cup : MonoBehaviour
@@ -47,11 +47,6 @@ public abstract class Cup : MonoBehaviour
             AddRecipe(recipe);
             Picker.Instance.SetPick(RecipeType.None);
         }
-    }
-
-    public CupType GetCupType()
-    {
-        return cupType;
     }
 
     public abstract void AddRecipe(RecipeType recipe);
