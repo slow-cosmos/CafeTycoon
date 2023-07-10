@@ -47,7 +47,7 @@ public class SpriteChanger : MonoBehaviour
 
     void Start()
     {
-        Cup menu = GetComponent<Cup>();
+        CupMenu menu = GetComponent<CupMenu>();
         menu.changeSprite += ChangeSprite;
     }
 

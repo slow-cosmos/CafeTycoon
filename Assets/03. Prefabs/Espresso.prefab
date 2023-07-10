@@ -98,7 +98,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a928bb2ec325d0e46b66e6d3a9774b9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 1378101671, guid: 3297622c5b551024d867443c3e244a02, type: 3}
+  - {fileID: 1796211055, guid: 963545e9feb81e744a429ff88b1d7445, type: 3}
+  trigger: {fileID: 0}
   recipeType: 1
+  cost: 0
 --- !u!65 &6847239914170186322
 BoxCollider:
   m_ObjectHideFlags: 0

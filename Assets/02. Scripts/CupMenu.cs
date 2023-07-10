@@ -21,25 +21,39 @@ public enum IngredientType
 public class Dictionary : SerializableDictionary<IngredientType, RecipeType>{} // dictionary 인스펙터 표시
 
 // 생성된 오브젝트
-public abstract class Cup : MonoBehaviour
+public abstract class CupMenu : MonoBehaviour
 {
     public delegate void ChangeSprite(CupType cupType, Dictionary ingredients);
     public ChangeSprite changeSprite;
 
     [SerializeField]
     protected CupType cupType; // 컵 종류
-
+    [SerializeField]
+    protected int cost; // 가격
     public Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
+    
 
-    public Cup() // 생성자 초기화
+    protected CupMenu() // 초기화
     {
         ingredients.Add(IngredientType.Main, RecipeType.None);
         ingredients.Add(IngredientType.Sub, RecipeType.None);
         ingredients.Add(IngredientType.Ice, RecipeType.None);
         ingredients.Add(IngredientType.Cream, RecipeType.None);
+
+        cost = 0;
     }
 
-    public void OnMouseDown() // 재료 오브젝트가 닿았을 때로 수정해야 함
+    protected void InitCost()
+    {
+        cost = 0;
+    }
+
+    public void AddCost(int c)
+    {
+        cost += c;
+    }
+
+    protected void OnMouseDown() // 재료 오브젝트가 닿았을 때로 수정해야 함
     {
         RecipeType recipe = Picker.Instance.GetPick();
         if(recipe != RecipeType.None)
@@ -49,10 +63,10 @@ public abstract class Cup : MonoBehaviour
         }
     }
 
-    public abstract void AddRecipe(RecipeType recipe);
+    public abstract bool AddRecipe(RecipeType recipe);
 }
 
-public class EspressoCup : Cup
+public class EspressoCup : CupMenu
 {
     void Awake()
     {
@@ -65,27 +79,35 @@ public class EspressoCup : Cup
         changeSprite(cupType, ingredients);
     }
 
-    public override void AddRecipe(RecipeType recipe)
+    public override bool AddRecipe(RecipeType recipe)
     {
         switch(recipe)
         {
             case RecipeType.Espresso:
-                ingredients[IngredientType.Main] = RecipeType.Espresso;
+                if(ingredients[IngredientType.Main] == RecipeType.None)
+                {
+                    ingredients[IngredientType.Main] = RecipeType.Espresso;
+                    return true;
+                }
+                return false;                
                 break;
             case RecipeType.Cream:
                 if(ingredients[IngredientType.Main] != RecipeType.None)
                 {
                     ingredients[IngredientType.Cream] = RecipeType.Cream;
+                    return true;
                 }
+                return false;
                 break;
             default:
+                return false;
                 break;
         }
         changeSprite(cupType, ingredients);
     }
 }
 
-public class MugCup : Cup
+public class MugCup : CupMenu
 {
     void Awake()
     {
@@ -98,7 +120,7 @@ public class MugCup : Cup
         changeSprite(cupType, ingredients);
     }
 
-    public override void AddRecipe(RecipeType recipe)
+    public override bool AddRecipe(RecipeType recipe)
     {
         switch(recipe)
         {
@@ -106,7 +128,9 @@ public class MugCup : Cup
                 if(ingredients[IngredientType.Main] == RecipeType.None)
                 {
                     ingredients[IngredientType.Main] = RecipeType.Espresso;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.GreenTea:
                 if(ingredients[IngredientType.Main] == RecipeType.None &&
@@ -114,29 +138,38 @@ public class MugCup : Cup
                     ingredients[IngredientType.Sub] == RecipeType.HotMilk))
                 {
                     ingredients[IngredientType.Main] = RecipeType.GreenTea;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.Water:
                 if(ingredients[IngredientType.Main] != RecipeType.GreenTea &&
                     ingredients[IngredientType.Sub] == RecipeType.None)
                 {
                     ingredients[IngredientType.Sub] = RecipeType.Water;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.HotMilk:
                 if(ingredients[IngredientType.Sub] == RecipeType.None)
                 {
                     ingredients[IngredientType.Sub] = RecipeType.HotMilk;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.Cream:
                 if(ingredients[IngredientType.Main] == RecipeType.Espresso &&
                     ingredients[IngredientType.Sub] == RecipeType.Water)
                 {
                     ingredients[IngredientType.Cream] = RecipeType.Cream;
+                    return true;
                 }
+                return false;
                 break;
             default:
+                return false;
                 break;
             
         }
@@ -144,7 +177,7 @@ public class MugCup : Cup
     }
 }
 
-public class IceCup : Cup
+public class IceCup : CupMenu
 {
     void Awake()
     {
@@ -157,7 +190,7 @@ public class IceCup : Cup
         changeSprite(cupType, ingredients);
     }
 
-    public override void AddRecipe(RecipeType recipe)
+    public override bool AddRecipe(RecipeType recipe)
     {
         switch(recipe)
         {
@@ -165,7 +198,9 @@ public class IceCup : Cup
                 if(ingredients[IngredientType.Main] == RecipeType.None)
                 {
                     ingredients[IngredientType.Main] = RecipeType.Espresso;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.GreenTea:
                 if(ingredients[IngredientType.Main] == RecipeType.None &&
@@ -173,23 +208,34 @@ public class IceCup : Cup
                     ingredients[IngredientType.Sub] == RecipeType.Milk))
                 {
                     ingredients[IngredientType.Main] = RecipeType.GreenTea;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.Water:
                 if(ingredients[IngredientType.Main] != RecipeType.GreenTea &&
                     ingredients[IngredientType.Sub] == RecipeType.None)
                 {
                     ingredients[IngredientType.Sub] = RecipeType.Water;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.Milk:
                 if(ingredients[IngredientType.Sub] == RecipeType.None)
                 {
                     ingredients[IngredientType.Sub] = RecipeType.Milk;
+                    return true;
                 }
+                return false;
                 break;
             case RecipeType.Ice:
-                ingredients[IngredientType.Ice] = RecipeType.Ice;
+                if(ingredients[IngredientType.Ice] == RecipeType.None)
+                {
+                    ingredients[IngredientType.Ice] = RecipeType.Ice;
+                    return true;
+                }
+                return false;
                 break;
             case RecipeType.Cream:
                 if(ingredients[IngredientType.Main] == RecipeType.Espresso &&
@@ -197,9 +243,12 @@ public class IceCup : Cup
                     ingredients[IngredientType.Ice] == RecipeType.Ice)
                 {
                     ingredients[IngredientType.Cream] = RecipeType.Cream;
+                    return true;
                 }
+                return false;
                 break;
             default:
+                return false;
                 break;
         }
         changeSprite(cupType, ingredients);
