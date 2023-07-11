@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9b0940a8cac729f40bd2b177cf9bd064
+guid: 9fdb8d830f422724eaf24870ba7eb895
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,7 +115,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: M_1003_1 1_0
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 128
+        width: 95
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5f388dedd5bbd54b881e508fa5d62da
+      internalID: 785587900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_1003_1 1_1
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 30
+        width: 104
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f057be709df6849aaaa46a7ca30e88
+      internalID: 71790428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_1003_1 1_2
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 382
+        width: 102
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ebc5a1034f1a5241994fd3beb9909c1
+      internalID: 1705064573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -126,7 +189,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      M_1003_1 1_0: 785587900
+      M_1003_1_0: -1041526278
+      M_1003_1 1_2: 1705064573
+      M_1003_1 1_1: 71790428
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

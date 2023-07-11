@@ -13,13 +13,17 @@ public class HolderManager : MonoBehaviour
     void Awake()
     {
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
-        HolderInit();
+        Init();
     }
 
-    void HolderInit()
+    void Init()
     {
         holderCount = 2; // 업그레이드 정보로 바꾸기
         spriteRenderer.sprite = sprites[holderCount-1];
+        for(int i=holderCount;i<holders.Count;i++)
+        {
+            holders[i].gameObject.SetActive(false);
+        }
     }
 
     public Holder CanHold()
@@ -33,18 +37,5 @@ public class HolderManager : MonoBehaviour
         }
         Debug.Log("자리 없음!");
         return null; // 없으면 null 반환
-    }
-
-    public List<Holder> CanHoldCoffee()
-    {
-        List<Holder> emptyHolders = new List<Holder>();
-        for(int i=0;i<holderCount;i++)
-        {
-            if(!holders[i].working && holders[i].menu == null)
-            {
-                emptyHolders.Add(holders[i]);
-            }
-        }
-        return emptyHolders;
     }
 }

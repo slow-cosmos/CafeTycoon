@@ -26,13 +26,16 @@ public abstract class CupMenu : MonoBehaviour
     public delegate void ChangeSprite(CupType cupType, Dictionary ingredients);
     public ChangeSprite changeSprite;
 
-    [SerializeField]
-    protected CupType cupType; // 컵 종류
+    public CupType cupType; // 컵 종류
     [SerializeField]
     protected int cost; // 가격
-    public Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
-    
+    [SerializeField]
+    protected Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
 
+    protected Vector3 originPosition;
+    [SerializeField]
+    protected GameObject trigger; // 트리거 오브젝트
+    
     protected CupMenu() // 초기화
     {
         ingredients.Add(IngredientType.Main, RecipeType.None);
@@ -40,7 +43,38 @@ public abstract class CupMenu : MonoBehaviour
         ingredients.Add(IngredientType.Ice, RecipeType.None);
         ingredients.Add(IngredientType.Cream, RecipeType.None);
 
-        cost = 0;
+        InitCost();
+    }
+
+    public void OnMouseDrag()
+    {
+        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,10));
+    }
+
+    public void OnMouseUp()
+    {
+        if(trigger != null)
+        {
+            // if(trigger.CompareTag("Customer"))
+            // {
+
+            // }
+            if(trigger.CompareTag("Trash"))
+            {
+                Destroy(gameObject);
+            }
+        }
+        transform.position = originPosition;
+    }
+
+    protected void OnTriggerStay(Collider col)
+    {
+        trigger = col.gameObject;
+    }
+
+    protected void OnTriggerExit(Collider col)
+    {
+        trigger = null;
     }
 
     protected void InitCost()
@@ -53,17 +87,16 @@ public abstract class CupMenu : MonoBehaviour
         cost += c;
     }
 
-    protected void OnMouseDown() // 재료 오브젝트가 닿았을 때로 수정해야 함
+    public Dictionary GetIngredients()
     {
-        RecipeType recipe = Picker.Instance.GetPick();
-        if(recipe != RecipeType.None)
-        {
-            AddRecipe(recipe);
-            Picker.Instance.SetPick(RecipeType.None);
-        }
+        return ingredients;
     }
 
-    public abstract bool AddRecipe(RecipeType recipe);
+    public void SetIngredients(IngredientType ingredient, RecipeType recipe)
+    {
+        ingredients[ingredient] = recipe;
+        changeSprite(cupType, ingredients);
+    }
 }
 
 public class EspressoCup : CupMenu
@@ -72,38 +105,15 @@ public class EspressoCup : CupMenu
     {
         cupType = CupType.EspressoCup;
         Debug.Log("에소프레소잔 생성");
+
+        originPosition = transform.position;
     }
 
     void Start()
     {
         changeSprite(cupType, ingredients);
-    }
-
-    public override bool AddRecipe(RecipeType recipe)
-    {
-        switch(recipe)
-        {
-            case RecipeType.Espresso:
-                if(ingredients[IngredientType.Main] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Main] = RecipeType.Espresso;
-                    return true;
-                }
-                return false;                
-                break;
-            case RecipeType.Cream:
-                if(ingredients[IngredientType.Main] != RecipeType.None)
-                {
-                    ingredients[IngredientType.Cream] = RecipeType.Cream;
-                    return true;
-                }
-                return false;
-                break;
-            default:
-                return false;
-                break;
-        }
-        changeSprite(cupType, ingredients);
+        gameObject.AddComponent<BoxCollider>();
+        gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
 }
 
@@ -113,67 +123,15 @@ public class MugCup : CupMenu
     {
         cupType = CupType.MugCup;
         Debug.Log("머그잔 생성");
+
+        originPosition = transform.position;
     }
 
     void Start()
     {
         changeSprite(cupType, ingredients);
-    }
-
-    public override bool AddRecipe(RecipeType recipe)
-    {
-        switch(recipe)
-        {
-            case RecipeType.Espresso:
-                if(ingredients[IngredientType.Main] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Main] = RecipeType.Espresso;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.GreenTea:
-                if(ingredients[IngredientType.Main] == RecipeType.None &&
-                    (ingredients[IngredientType.Sub] == RecipeType.None ||
-                    ingredients[IngredientType.Sub] == RecipeType.HotMilk))
-                {
-                    ingredients[IngredientType.Main] = RecipeType.GreenTea;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.Water:
-                if(ingredients[IngredientType.Main] != RecipeType.GreenTea &&
-                    ingredients[IngredientType.Sub] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Sub] = RecipeType.Water;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.HotMilk:
-                if(ingredients[IngredientType.Sub] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Sub] = RecipeType.HotMilk;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.Cream:
-                if(ingredients[IngredientType.Main] == RecipeType.Espresso &&
-                    ingredients[IngredientType.Sub] == RecipeType.Water)
-                {
-                    ingredients[IngredientType.Cream] = RecipeType.Cream;
-                    return true;
-                }
-                return false;
-                break;
-            default:
-                return false;
-                break;
-            
-        }
-        changeSprite(cupType, ingredients);
+        gameObject.AddComponent<BoxCollider>();
+        gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
 }
 
@@ -183,74 +141,14 @@ public class IceCup : CupMenu
     {
         cupType = CupType.IceCup;
         Debug.Log("얼음잔 생성");
+
+        originPosition = transform.position;
     }
 
     void Start()
     {
         changeSprite(cupType, ingredients);
-    }
-
-    public override bool AddRecipe(RecipeType recipe)
-    {
-        switch(recipe)
-        {
-            case RecipeType.Espresso:
-                if(ingredients[IngredientType.Main] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Main] = RecipeType.Espresso;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.GreenTea:
-                if(ingredients[IngredientType.Main] == RecipeType.None &&
-                    (ingredients[IngredientType.Sub] == RecipeType.None ||
-                    ingredients[IngredientType.Sub] == RecipeType.Milk))
-                {
-                    ingredients[IngredientType.Main] = RecipeType.GreenTea;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.Water:
-                if(ingredients[IngredientType.Main] != RecipeType.GreenTea &&
-                    ingredients[IngredientType.Sub] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Sub] = RecipeType.Water;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.Milk:
-                if(ingredients[IngredientType.Sub] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Sub] = RecipeType.Milk;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.Ice:
-                if(ingredients[IngredientType.Ice] == RecipeType.None)
-                {
-                    ingredients[IngredientType.Ice] = RecipeType.Ice;
-                    return true;
-                }
-                return false;
-                break;
-            case RecipeType.Cream:
-                if(ingredients[IngredientType.Main] == RecipeType.Espresso &&
-                    ingredients[IngredientType.Sub] == RecipeType.Water &&
-                    ingredients[IngredientType.Ice] == RecipeType.Ice)
-                {
-                    ingredients[IngredientType.Cream] = RecipeType.Cream;
-                    return true;
-                }
-                return false;
-                break;
-            default:
-                return false;
-                break;
-        }
-        changeSprite(cupType, ingredients);
+        gameObject.AddComponent<BoxCollider>();
+        gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
 }

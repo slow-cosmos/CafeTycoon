@@ -35,8 +35,7 @@ public class Cup : MonoBehaviour, IMakeMenu
                     menu.AddComponent<IceCup>();
                     break;
             }
-            menu.AddComponent<BoxCollider>();
-            menu.GetComponent<BoxCollider>().isTrigger = true;
+            
             holder.menu = menu;
         }
     }

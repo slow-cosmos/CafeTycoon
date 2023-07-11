@@ -4,5 +4,5 @@ using UnityEngine;
 
 interface IMakeMenu
 {
-    void MakeMenu();   
+    void MakeMenu();
 }

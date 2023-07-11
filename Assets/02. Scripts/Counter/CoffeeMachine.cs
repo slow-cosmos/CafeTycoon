@@ -7,7 +7,7 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
     public GameObject coffeeObject;
 
     [SerializeField]
-    HolderManager coffeeHolder;
+    Group group;
 
     [SerializeField]
     float timer;
@@ -29,17 +29,17 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
 
     IEnumerator CoffeeGenerate()
     {
-        List<Holder> emptyHolders = coffeeHolder.CanHoldCoffee();
-        if(emptyHolders.Count != 0)
+        List<Holder> emptyList = group.GetEmptyList();
+        if(emptyList.Count != 0)
         {
-            foreach(var holder in emptyHolders)
+            foreach(var holder in emptyList)
             {
                 holder.working = true;
             }
 
             yield return new WaitForSeconds(timer);
 
-            foreach(var holder in emptyHolders)
+            foreach(var holder in emptyList)
             {
                 GameObject menu = Instantiate(coffeeObject, holder.transform);
                 holder.menu = menu;
