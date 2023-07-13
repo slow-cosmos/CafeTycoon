@@ -10,6 +10,8 @@ public class GroupManager : MonoBehaviour
     Group steamMachines;
     [SerializeField]
     Group ovens;
+    [SerializeField]
+    Group mixer;
 
     void Awake()
     {
@@ -19,6 +21,7 @@ public class GroupManager : MonoBehaviour
             coffeeMachines.Init(2);
             steamMachines.Init(1);
             ovens.Init(1);
+            mixer.Init(2);
         }
         catch (System.Exception exception)
         {

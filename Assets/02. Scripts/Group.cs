@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// 머신, 홀더 등을 관리
 public class Group : MonoBehaviour
 {
     [SerializeField]
@@ -23,17 +24,13 @@ public class Group : MonoBehaviour
         }
     }
 
-    public List<Holder> GetEmptyList()
+    public List<GameObject> GetObjects()
     {
-        List<Holder> emptyList = new List<Holder>();
-        for(int i=0;i<count;i++)
-        {
-            Holder holder = group[i].transform.GetChild(0).GetComponent<Holder>();
-            if(!holder.working && holder.menu == null)
-            {
-                emptyList.Add(holder);
-            }
-        }
-        return emptyList;
+        return group;
+    }
+
+    public int GetObjectsCount()
+    {
+        return count;
     }
 }

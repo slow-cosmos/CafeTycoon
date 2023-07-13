@@ -9,6 +9,9 @@ public class SteamMachine : MonoBehaviour, IMakeMenu
     Holder holder;
 
     [SerializeField]
+    bool isWorking = false;
+
+    [SerializeField]
     float timer;
 
     void Awake()
@@ -18,7 +21,7 @@ public class SteamMachine : MonoBehaviour, IMakeMenu
 
     public void MakeMenu()
     {
-        if(holder.menu == null && holder.working == false)
+        if(holder.menu == null && isWorking == false)
         {
             StartCoroutine(HotMilkGenerate());
         }
@@ -26,12 +29,12 @@ public class SteamMachine : MonoBehaviour, IMakeMenu
 
     IEnumerator HotMilkGenerate()
     {
-        holder.working = true;
+        isWorking = true;
 
         yield return new WaitForSeconds(timer);
         GameObject menu = Instantiate(hotMilkObject, holder.transform);
         
         holder.menu = menu;
-        holder.working = false;
+        isWorking = false;
     }
 }

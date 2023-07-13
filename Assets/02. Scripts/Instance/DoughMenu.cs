@@ -2,20 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Doughnut : MonoBehaviour
+public enum BakedType
+{
+    Baked,
+    Burned
+}
+
+public class DoughMenu : MonoBehaviour
 {
     protected Vector3 originPosition;
     [SerializeField]
-    protected GameObject trigger; // 트리거 오브젝트
+    GameObject trigger; // 트리거 오브젝트
 
     [SerializeField]
     protected int cost;
 
-    void Awake()
-    {
-        originPosition = transform.position;
+    public Sprite[] sprites = new Sprite[2];
+    [SerializeField]
+    BakedType bakedType;
 
-        cost = 5; // 가격 불러오는 걸로 갱신
+    public void SetBakedType(BakedType type)
+    {
+        bakedType = type;
+        GetComponent<SpriteRenderer>().sprite = sprites[(int)bakedType];
     }
 
     public void OnMouseDrag()
@@ -29,7 +38,8 @@ public class Doughnut : MonoBehaviour
         {
             // if(trigger.CompareTag("Customer"))
             // {
-            //        Destroy(gameObject);
+                    //타면 제공 X
+            //      Destroy(gameObject);
             // }
             if(trigger.CompareTag("Trash"))
             {

@@ -335,7 +335,7 @@ TextureImporter:
         width: 121
         height: 96
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -343,6 +343,27 @@ TextureImporter:
       bones: []
       spriteID: 1e2ec73f9ec47364cb4c0a46995e5277
       internalID: 511433585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Recipe3_9
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 764
+        width: 81
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435e7ec187f970b4aaf28298498abb51
+      internalID: -867767462
       vertices: []
       indices: 
       edges: []
@@ -358,6 +379,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      Recipe3_9: -867767462
       A_0001_Recipe_15: 530894992
       A_0001_Recipe_3: 957151468
       Recipe3_2: -1457255464
@@ -425,8 +447,8 @@ TextureImporter:
       A_0001_Recipe_41: 1891194746
       A_0001_Recipe_43: 1164455630
       A_0001_Recipe_57: 423645917
-      A_0001_Recipe_0: -1368593894
       A_0001_Recipe_44: -212011001
+      A_0001_Recipe_0: -1368593894
       A_0001_Recipe_13: 1200299639
   spritePackingTag: 
   pSDRemoveMatte: 0

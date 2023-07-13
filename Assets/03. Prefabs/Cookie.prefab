@@ -130,3 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
   cost: 0
+  sprites:
+  - {fileID: 785587900, guid: 9fdb8d830f422724eaf24870ba7eb895, type: 3}
+  - {fileID: -1935677474, guid: 581692e4936b8244ebfea18b70116fab, type: 3}
+  bakedType: 0

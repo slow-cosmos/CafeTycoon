@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cookie : MonoBehaviour
+public class Juice : MonoBehaviour
 {
     protected Vector3 originPosition;
     [SerializeField]
-    protected GameObject trigger; // 트리거 오브젝트
+    GameObject trigger; // 트리거 오브젝트
 
     [SerializeField]
     protected int cost;
@@ -14,7 +14,6 @@ public class Cookie : MonoBehaviour
     void Awake()
     {
         originPosition = transform.position;
-
         cost = 5; // 가격 불러오는 걸로 갱신
     }
 
@@ -29,7 +28,7 @@ public class Cookie : MonoBehaviour
         {
             // if(trigger.CompareTag("Customer"))
             // {
-            //        Destroy(gameObject);
+            //      Destroy(gameObject);
             // }
             if(trigger.CompareTag("Trash"))
             {
