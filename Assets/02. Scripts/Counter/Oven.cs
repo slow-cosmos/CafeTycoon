@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Oven : MonoBehaviour, IMakeMenu
+public class Oven : MonoBehaviour
 {
-    public GameObject dough;
     [SerializeField]
     Holder holder;
 
@@ -34,15 +33,15 @@ public class Oven : MonoBehaviour, IMakeMenu
         isClicked = false;
     }
 
-    public void MakeMenu()
+    public void MakeMenu(GameObject dough)
     {
         if(holder.menu == null && isWorking == false)
         {
-            StartCoroutine(Bake());
+            StartCoroutine(Bake(dough));
         }
     }
 
-    IEnumerator Bake()
+    IEnumerator Bake(GameObject dough)
     {
         isWorking = true;
 

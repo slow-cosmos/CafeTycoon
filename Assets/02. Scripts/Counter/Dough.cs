@@ -12,25 +12,28 @@ public class Dough : MonoBehaviour
 {
     public GameObject doughObject; // 만들어진 도우
 
-    protected SpriteRenderer renderer;
-    public Sprite[] sprites = new Sprite[2]; // 기본 0, 드래그 중 1
-    protected Vector3 originPosition;
+    BoxCollider collider;
+    SpriteRenderer renderer;
+    public Sprite sprite;
+    Vector3 originPosition;
     [SerializeField]
-    protected GameObject trigger; // 트리거 오브젝트
+    GameObject trigger; // 트리거 오브젝트
 
     [SerializeField]
-    protected DoughType doughType;
+    DoughType doughType;
 
     void Awake()
     {
+        collider = GetComponent<BoxCollider>();
         renderer = GetComponent<SpriteRenderer>();
         originPosition = transform.position;
     }
 
     public void OnMouseDrag()
     {
-        renderer.sprite = sprites[1];
+        renderer.sprite = sprite;
         transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,10));
+        ChangeColliderSize(1.02f, 0.8f);
     }
 
     public void OnMouseUp()
@@ -38,11 +41,11 @@ public class Dough : MonoBehaviour
         if(trigger != null && trigger.CompareTag("Oven")) 
         {
             Oven oven = trigger.GetComponent<Oven>();
-            oven.dough = doughObject;
-            oven.MakeMenu();
+            oven.MakeMenu(doughObject);
         }
-        renderer.sprite = sprites[0];
+        renderer.sprite = null;
         transform.position = originPosition;
+        ChangeColliderSize(1.96f, 0.99f);
     }
 
     private void OnTriggerStay(Collider col)
@@ -53,5 +56,10 @@ public class Dough : MonoBehaviour
     private void OnTriggerExit(Collider col)
     {
         trigger = null;
+    }
+
+    void ChangeColliderSize(float x, float y)
+    {
+        collider.size = new Vector3(x, y, 0);
     }
 }
