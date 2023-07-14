@@ -1673,7 +1673,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed609165808fa884c95e8059b8484d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dough: {fileID: 0}
   holder: {fileID: 1537714845}
   isWorking: 0
   timer: 0
@@ -1873,9 +1872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doughObject: {fileID: 3160036302179795029, guid: 0458915813cc2b446a40a4cd81885534, type: 3}
-  sprites:
-  - {fileID: 0}
-  - {fileID: -410682812, guid: 581692e4936b8244ebfea18b70116fab, type: 3}
+  sprite: {fileID: -410682812, guid: 581692e4936b8244ebfea18b70116fab, type: 3}
   trigger: {fileID: 0}
   doughType: 0
 --- !u!114 &1320136432 stripped
@@ -1937,9 +1934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doughObject: {fileID: 3160036302179795029, guid: 6b7a310b19660a04a89baab926e3db3b, type: 3}
-  sprites:
-  - {fileID: 0}
-  - {fileID: 1705064573, guid: 9fdb8d830f422724eaf24870ba7eb895, type: 3}
+  sprite: {fileID: 1705064573, guid: 9fdb8d830f422724eaf24870ba7eb895, type: 3}
   trigger: {fileID: 0}
   doughType: 1
 --- !u!54 &1326097605
@@ -2122,7 +2117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed609165808fa884c95e8059b8484d69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dough: {fileID: 0}
   holder: {fileID: 969096216}
   isWorking: 0
   timer: 0

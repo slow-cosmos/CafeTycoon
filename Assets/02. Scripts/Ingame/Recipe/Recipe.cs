@@ -46,5 +46,5 @@ public abstract class Recipe : MonoBehaviour
         trigger = null;
     }
 
-    protected abstract bool isAddable(CupMenu cup);
+    protected abstract bool IsAddable(CupMenu cup);
 }

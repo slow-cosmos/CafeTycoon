@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HotMilk : Recipe
+public class Espresso : Recipe
 {
     void Awake()
     {
@@ -19,9 +19,9 @@ public class HotMilk : Recipe
             if(trigger.CompareTag("Cup")) 
             {
                 CupMenu cup = trigger.GetComponent<CupMenu>();
-                if(isAddable(cup)) // 컵에 추가할 수 있으면
+                if(IsAddable(cup)) // 컵에 추가할 수 있으면
                 {
-                    cup.SetIngredients(IngredientType.Sub, recipeType);
+                    cup.SetIngredients(IngredientType.Main, recipeType);
                     cup.AddCost(cost);
                     Destroy(gameObject);
                 }
@@ -48,11 +48,10 @@ public class HotMilk : Recipe
         } 
     }
 
-    protected override bool isAddable(CupMenu cup)
+    protected override bool IsAddable(CupMenu cup)
     {
         Dictionary ingredients = cup.GetIngredients();
-        if(cup.cupType == CupType.MugCup &&
-            ingredients[IngredientType.Sub] == RecipeType.None)
+        if(ingredients[IngredientType.Main] == RecipeType.None)
         {
             return true;
         }

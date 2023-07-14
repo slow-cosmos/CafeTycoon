@@ -28,7 +28,7 @@ public class Ice : Recipe
         if(trigger != null && trigger.CompareTag("Cup")) 
         {
             CupMenu cup = trigger.GetComponent<CupMenu>();
-            if(isAddable(cup)) // 컵에 추가할 수 있으면
+            if(IsAddable(cup)) // 컵에 추가할 수 있으면
             {
                 cup.SetIngredients(IngredientType.Ice, recipeType);
                 cup.AddCost(cost);
@@ -39,7 +39,7 @@ public class Ice : Recipe
         ChangeColliderSize(2.45f, 2.26f);
     }
 
-    protected override bool isAddable(CupMenu cup)
+    protected override bool IsAddable(CupMenu cup)
     {
         Dictionary ingredients = cup.GetIngredients();
         if(cup.cupType == CupType.IceCup &&

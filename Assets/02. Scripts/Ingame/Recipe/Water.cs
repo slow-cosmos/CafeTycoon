@@ -17,7 +17,7 @@ public class Water : Recipe
         if(trigger != null && trigger.CompareTag("Cup")) 
         {
             CupMenu cup = trigger.GetComponent<CupMenu>();
-            if(isAddable(cup)) // 컵에 추가할 수 있으면
+            if(IsAddable(cup)) // 컵에 추가할 수 있으면
             {
                 cup.SetIngredients(IngredientType.Sub, recipeType);
                 cup.AddCost(cost);
@@ -27,7 +27,7 @@ public class Water : Recipe
         transform.position = originPosition;
     }
 
-    protected override bool isAddable(CupMenu cup)
+    protected override bool IsAddable(CupMenu cup)
     {
         Dictionary ingredients = cup.GetIngredients();
         if(cup.cupType != CupType.EspressoCup)
