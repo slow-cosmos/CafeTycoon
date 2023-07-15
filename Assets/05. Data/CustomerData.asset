@@ -12,8 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 610caf05eda6152448ba48875539311a, type: 3}
   m_Name: CustomerData
   m_EditorClassIdentifier: 
-  timer: 0
-  timeSpeed: 0
-  orderCount: 0
-  orderList: []
-  cost: 0
+  timer: 10
+  timeSpeed: 1

@@ -36,11 +36,21 @@ public class DoughMenu : MonoBehaviour
     {
         if(trigger != null) 
         {
-            // if(trigger.CompareTag("Customer"))
-            // {
-                    //타면 제공 X
-            //      Destroy(gameObject);
-            // }
+            if(trigger.CompareTag("Customer"))
+            {
+                if(bakedType == BakedType.Baked) // 타지 않았으면
+                {
+                    Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+                    if(trigger.GetComponent<Customer>().MatchMenu(sprite))
+                    {
+                        Destroy(gameObject);
+                    }
+                }
+                else
+                {
+                    Debug.Log("탄걸 왜 줌");
+                }
+            }
             if(trigger.CompareTag("Trash"))
             {
                 Destroy(gameObject);

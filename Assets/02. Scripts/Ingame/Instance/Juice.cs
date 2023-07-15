@@ -26,10 +26,14 @@ public class Juice : MonoBehaviour
     {
         if(trigger != null) 
         {
-            // if(trigger.CompareTag("Customer"))
-            // {
-            //      Destroy(gameObject);
-            // }
+            if(trigger.CompareTag("Customer"))
+            {
+                Sprite sprite = GetComponent<SpriteRenderer>().sprite;
+                if(trigger.GetComponent<Customer>().MatchMenu(sprite))
+                {
+                    Destroy(gameObject);
+                }
+            }
             if(trigger.CompareTag("Trash"))
             {
                 Destroy(gameObject);

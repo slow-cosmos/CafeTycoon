@@ -8,6 +8,7 @@ TagManager:
   - Trash
   - SteamMachine
   - Oven
+  - Customer
   layers:
   - Default
   - TransparentFX
