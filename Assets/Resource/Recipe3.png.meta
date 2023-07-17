@@ -380,10 +380,10 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Recipe3_9: -867767462
-      A_0001_Recipe_15: 530894992
       A_0001_Recipe_3: 957151468
       Recipe3_2: -1457255464
       A_0001_Recipe_5: 480218064
+      A_0001_Recipe_13: 1200299639
       Recipe3_5: 818289019
       A_0001_Recipe_11: 1316946931
       A_0001_Recipe_51: -320375981
@@ -449,7 +449,7 @@ TextureImporter:
       A_0001_Recipe_57: 423645917
       A_0001_Recipe_44: -212011001
       A_0001_Recipe_0: -1368593894
-      A_0001_Recipe_13: 1200299639
+      A_0001_Recipe_15: 530894992
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
