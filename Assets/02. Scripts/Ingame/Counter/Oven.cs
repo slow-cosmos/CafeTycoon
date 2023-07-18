@@ -35,7 +35,7 @@ public class Oven : MonoBehaviour
 
     public void MakeMenu(GameObject dough)
     {
-        if(holder.menu == null && isWorking == false)
+        if(holder.Object == null && isWorking == false)
         {
             StartCoroutine(Bake(dough));
         }
@@ -57,7 +57,7 @@ public class Oven : MonoBehaviour
             {
                 GameObject menu = Instantiate(dough, holder.transform);
                 menu.GetComponent<DoughMenu>().SetBakedType(BakedType.Baked);
-                holder.menu = menu;
+                holder.Object = menu;
                 isWorking = false;
 
                 yield break;
@@ -67,7 +67,7 @@ public class Oven : MonoBehaviour
             {
                 GameObject menu = Instantiate(dough, holder.transform);
                 menu.GetComponent<DoughMenu>().SetBakedType(BakedType.Burned);
-                holder.menu = menu;
+                holder.Object = menu;
                 isWorking = false;
             }
         }

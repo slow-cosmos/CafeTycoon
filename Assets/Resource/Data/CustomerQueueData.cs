@@ -13,9 +13,7 @@ public struct CustomerInfo
 [CreateAssetMenu]
 public class CustomerQueueData : ScriptableObject
 {
-    public int CustomerCount => customerCount;
     public List<CustomerInfo> CustomerList => customerList;
-
-    [SerializeField] private int customerCount;
+    
     [SerializeField] private List<CustomerInfo> customerList = new List<CustomerInfo>();
 }

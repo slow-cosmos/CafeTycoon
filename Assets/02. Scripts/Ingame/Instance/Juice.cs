@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Juice : MonoBehaviour
 {
-    protected Vector3 originPosition;
+    private Vector3 originPosition;
     [SerializeField]
     GameObject trigger; // 트리거 오브젝트
 
     [SerializeField]
-    protected int cost;
+    private int cost;
 
     void Awake()
     {

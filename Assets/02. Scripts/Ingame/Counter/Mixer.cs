@@ -45,7 +45,7 @@ public class Mixer : MonoBehaviour, IMakeMenu
             foreach(var holder in emptyList)
             {
                 GameObject menu = Instantiate(juiceObject, holder.transform);
-                holder.menu = menu;
+                holder.Object = menu;
             }
         }
 
@@ -59,7 +59,7 @@ public class Mixer : MonoBehaviour, IMakeMenu
         for(int i=0;i<group.GetObjectsCount();i++) // 활성화된 홀더 중에
         {
             Holder holder = holders[i].GetComponent<Holder>();
-            if(holder.menu == null) // 홀더가 비어있는
+            if(holder.Object == null) // 홀더가 비어있는
             {
                 emptyList.Add(holder);
             }

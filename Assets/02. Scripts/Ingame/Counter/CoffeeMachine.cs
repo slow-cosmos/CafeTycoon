@@ -47,7 +47,7 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
             {
                 Holder holder = machine.gameObject.transform.GetChild(0).GetComponent<Holder>();
                 GameObject menu = Instantiate(coffeeObject, holder.transform);
-                holder.menu = menu;
+                holder.Object = menu;
                 machine.GetComponent<CoffeeMachine>().isWorking = false;
             }
         }
@@ -61,7 +61,7 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
         {
             Holder holder = machines[i].transform.GetChild(0).GetComponent<Holder>();
             CoffeeMachine machine = machines[i].GetComponent<CoffeeMachine>();
-            if(!machine.isWorking && holder.menu == null) // 홀더가 비어있고, 머신이 작동 중이지 않은
+            if(!machine.isWorking && holder.Object == null) // 홀더가 비어있고, 머신이 작동 중이지 않은
             {
                 emptyList.Add(machines[i]);
             }

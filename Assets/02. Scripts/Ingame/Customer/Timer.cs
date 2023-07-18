@@ -5,27 +5,31 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float timer;
+    [SerializeField] private Image gauge;
+
+    public float time;
     public float timeSpeed;
 
-    public Image gauge;
+    public bool isEnd;
 
     void Start()
     {
+        isEnd = false;
         StartCoroutine(OrderTimer());
     }
 
     IEnumerator OrderTimer()
     {
-        float curTime = timer;
+        float curTime = time;
         while(curTime > 0)
         {
             curTime -= Time.deltaTime * timeSpeed;
-            gauge.fillAmount = curTime / timer;
+            gauge.fillAmount = curTime / time;
             yield return null;
 
             if(curTime <= 0)
             {
+                isEnd = true;
                 curTime = 0;
                 yield break;
             }

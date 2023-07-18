@@ -10,22 +10,34 @@ public enum CustomerType
 
 public class Customer : MonoBehaviour
 {
-    public CustomerData customerData;
+    [SerializeField] private List<Order> orderList = new List<Order>();
+    [SerializeField] private int orderCount;
 
-    [SerializeField]
-    List<Order> orderList = new List<Order>();
-
-    [SerializeField]
-    Timer timer;
+    private float time = 20;
+    private float timeSpeed = 1;
+    [SerializeField] private Timer timer;
 
     void Awake()
     {
-        timer.timer = customerData.Timer;
-        timer.timeSpeed = customerData.TimeSpeed;
+        timer.time = time;
+        timer.timeSpeed = timeSpeed;
+    }
+
+    void Update()
+    {
+        if(timer.isEnd)
+        {
+            FailOrder();
+        }
+        else if(orderCount == 0)
+        {
+            SuccessOrder();
+        }
     }
 
     public void InitOrder(List<OrderType> order)
     {
+        orderCount = order.Count;
         for(int i=0;i<order.Count;i++)
         {
             orderList[i].gameObject.SetActive(true);
@@ -44,6 +56,7 @@ public class Customer : MonoBehaviour
                 if(sprite == menu)
                 {
                     order.gameObject.SetActive(false);
+                    orderCount--;
                     return true;
                 }
             }
@@ -54,11 +67,13 @@ public class Customer : MonoBehaviour
 
     void SuccessOrder()
     {
-        
+        Debug.Log("주문 성공");
+        Destroy(gameObject);
     }
 
     void FailOrder()
     {
-
+        Debug.Log("주문 실패");
+        Destroy(gameObject);
     }
 }

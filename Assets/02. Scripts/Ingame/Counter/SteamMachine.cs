@@ -21,7 +21,7 @@ public class SteamMachine : MonoBehaviour, IMakeMenu
 
     public void MakeMenu()
     {
-        if(holder.menu == null && isWorking == false)
+        if(holder.Object == null && isWorking == false)
         {
             StartCoroutine(HotMilkGenerate());
         }
@@ -34,7 +34,7 @@ public class SteamMachine : MonoBehaviour, IMakeMenu
         yield return new WaitForSeconds(timer);
         GameObject menu = Instantiate(hotMilkObject, holder.transform);
         
-        holder.menu = menu;
+        holder.Object = menu;
         isWorking = false;
     }
 }

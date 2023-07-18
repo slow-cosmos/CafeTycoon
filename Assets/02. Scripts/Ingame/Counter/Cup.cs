@@ -36,7 +36,7 @@ public class Cup : MonoBehaviour, IMakeMenu
                     break;
             }
             
-            holder.menu = menu;
+            holder.Object = menu;
         }
     }
 }

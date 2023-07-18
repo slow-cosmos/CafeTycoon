@@ -30,7 +30,7 @@ public class HolderManager : MonoBehaviour
     {
         for(int i=0;i<holderCount;i++)
         {
-            if(holders[i].menu == null)
+            if(holders[i].Object == null)
             {
                 return holders[i]; // 자리 있으면 홀더 오브젝트 반환
             }

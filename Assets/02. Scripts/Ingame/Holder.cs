@@ -4,10 +4,16 @@ using UnityEngine;
 
 public class Holder : MonoBehaviour
 {
-    public GameObject menu = null; // 홀더가 잡고있는 메뉴
-
-    void Awake()
+    [SerializeField] private GameObject obj = null;
+    public GameObject Object
     {
-        menu = null;
+        get
+        {
+            return obj;
+        }
+        set
+        {
+            obj = value;
+        }
     }
 }
