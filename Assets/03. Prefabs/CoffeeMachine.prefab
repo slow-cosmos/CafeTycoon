@@ -113,8 +113,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coffeeObject: {fileID: 6847239914170186318, guid: 9ad946798deaa7e4b89b9c24053e3a28, type: 3}
-  group: {fileID: 0}
+  machines: {fileID: 0}
   timer: 0
+  isWorking: 0
 --- !u!1001 &7210187603920178467
 PrefabInstance:
   m_ObjectHideFlags: 0

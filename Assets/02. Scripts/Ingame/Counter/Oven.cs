@@ -2,18 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Oven : MonoBehaviour
+public class Oven : MonoBehaviour, IMakeMenuObject
 {
-    [SerializeField]
-    Holder holder;
+    [SerializeField] private Holder holder;
 
-    [SerializeField]
-    bool isWorking = false;
-
-    [SerializeField]
-    float timer;
-    [SerializeField]
-    float burnedTime;
+    [SerializeField] private bool isWorking = false;
+    [SerializeField] private float timer;
+    [SerializeField] private float burnedTime;
 
     public bool isClicked = false;
 

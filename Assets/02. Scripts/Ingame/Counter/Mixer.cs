@@ -6,17 +6,14 @@ public class Mixer : MonoBehaviour, IMakeMenu
 {
     public GameObject juiceObject;
 
-    [SerializeField]
-    Group group;
+    [SerializeField] private Machines machines;
 
-    [SerializeField]
-    float timer;
-
-    [SerializeField]
-    bool isWorking = false;
+    [SerializeField] private bool isWorking = false;
+    [SerializeField] private float timer;
 
     void Awake()
     {
+        machines = gameObject.GetComponent<Machines>();
         timer = 3.0f; // 임시 타이머
     }
     
@@ -55,8 +52,8 @@ public class Mixer : MonoBehaviour, IMakeMenu
     public List<Holder> GetEmptyList()
     {
         List<Holder> emptyList = new List<Holder>();
-        List<GameObject> holders = group.GetObjects();
-        for(int i=0;i<group.GetObjectsCount();i++) // 활성화된 홀더 중에
+        List<GameObject> holders = machines.MachinesList;
+        for(int i=0;i<machines.MachineCount;i++) // 활성화된 홀더 중에
         {
             Holder holder = holders[i].GetComponent<Holder>();
             if(holder.Object == null) // 홀더가 비어있는

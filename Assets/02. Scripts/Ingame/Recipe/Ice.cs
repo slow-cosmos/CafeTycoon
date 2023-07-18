@@ -6,20 +6,22 @@ public class Ice : Recipe
 {
     BoxCollider collider;
 
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        InitCost();
         collider = GetComponent<BoxCollider>();
-        
-        renderer = GetComponent<SpriteRenderer>();
-        originPosition = transform.position;
+    }
 
-        cost = 5; // 가격 불러오는 걸로 갱신
+    public override void InitCost()
+    {
+        // 업그레이드 정보에 맞춰 가격 초기화
+        cost = 5;
     }
 
     public void OnMouseDrag()
     {
-        renderer.sprite = sprites[1];
-        transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition + new Vector3(0,0,10));
+        base.OnMouseDrag();
         ChangeColliderSize(1.05f, 0.95f);
     }
 
@@ -41,7 +43,7 @@ public class Ice : Recipe
 
     protected override bool IsAddable(CupMenu cup)
     {
-        Dictionary ingredients = cup.GetIngredients();
+        Dictionary ingredients = cup.Ingredients;
         if(cup.cupType == CupType.IceCup &&
             ingredients[IngredientType.Ice] == RecipeType.None)
         {
@@ -50,7 +52,7 @@ public class Ice : Recipe
         return false;
     }
 
-    void ChangeColliderSize(float x, float y)
+    private void ChangeColliderSize(float x, float y)
     {
         collider.size = new Vector3(x, y, 0);
     }

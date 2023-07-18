@@ -6,11 +6,9 @@ public class Cup : MonoBehaviour, IMakeMenu
 {
     public GameObject cupObject;
 
-    [SerializeField]
-    HolderManager cupHolder;
+    [SerializeField] private HolderManager cupHolder;
 
-    [SerializeField]
-    CupType cupType;
+    [SerializeField] private CupType cupType;
 
     void OnMouseDown()
     {

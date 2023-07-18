@@ -15,18 +15,24 @@ public enum RecipeType
     Cream = 7
 }
 
-public abstract class Recipe : MonoBehaviour
+public abstract class Recipe : MonoBehaviour, ICostInit
 {
     protected SpriteRenderer renderer;
     public Sprite[] sprites = new Sprite[2]; // 기본 0, 드래그 중 1
     protected Vector3 originPosition;
-    [SerializeField]
-    protected GameObject trigger; // 트리거 오브젝트
 
-    [SerializeField]
-    protected RecipeType recipeType;
-    [SerializeField]
-    protected int cost;
+    [SerializeField] protected GameObject trigger; // 트리거 오브젝트
+
+    public RecipeType recipeType;
+    public int cost;
+
+    protected virtual void Awake()
+    {
+        renderer = GetComponent<SpriteRenderer>();
+        originPosition = transform.position;
+    }
+
+    public abstract void InitCost();
 
     public void OnMouseDrag()
     {

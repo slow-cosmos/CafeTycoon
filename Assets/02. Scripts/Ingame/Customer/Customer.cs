@@ -8,7 +8,7 @@ public enum CustomerType
     Normal,
 }
 
-public class Customer : MonoBehaviour
+public class Customer : MonoBehaviour, ICostInit, ICostAdd
 {
     [SerializeField] private List<Order> orderList = new List<Order>();
     [SerializeField] private int orderCount;
@@ -17,10 +17,13 @@ public class Customer : MonoBehaviour
     private float timeSpeed = 1;
     [SerializeField] private Timer timer;
 
+    public int cost;
+
     void Awake()
     {
         timer.time = time;
         timer.timeSpeed = timeSpeed;
+        InitCost();
     }
 
     void Update()
@@ -75,5 +78,15 @@ public class Customer : MonoBehaviour
     {
         Debug.Log("주문 실패");
         Destroy(gameObject);
+    }
+
+    public void InitCost()
+    {
+        cost = 0;
+    }
+
+    public void AddCost(int c)
+    {
+        cost += c;
     }
 }

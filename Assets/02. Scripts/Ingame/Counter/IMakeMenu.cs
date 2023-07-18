@@ -6,3 +6,8 @@ interface IMakeMenu
 {
     void MakeMenu();
 }
+
+interface IMakeMenuObject
+{
+    void MakeMenu(GameObject obj);
+}

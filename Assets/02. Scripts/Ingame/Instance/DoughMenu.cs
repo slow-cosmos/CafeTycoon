@@ -8,18 +8,17 @@ public enum BakedType
     Burned
 }
 
-public class DoughMenu : MonoBehaviour
+public abstract class DoughMenu : MonoBehaviour, ICostInit
 {
     protected Vector3 originPosition;
-    [SerializeField]
-    GameObject trigger; // 트리거 오브젝트
-
-    [SerializeField]
-    protected int cost;
+    [SerializeField] private GameObject trigger; // 트리거 오브젝트
 
     public Sprite[] sprites = new Sprite[2];
-    [SerializeField]
-    BakedType bakedType;
+    [SerializeField] private BakedType bakedType;
+
+    public int cost;
+
+    public abstract void InitCost();
 
     public void SetBakedType(BakedType type)
     {
@@ -41,8 +40,10 @@ public class DoughMenu : MonoBehaviour
                 if(bakedType == BakedType.Baked) // 타지 않았으면
                 {
                     Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-                    if(trigger.GetComponent<Customer>().MatchMenu(sprite))
+                    Customer customer = trigger.GetComponent<Customer>();
+                    if(customer.MatchMenu(sprite))
                     {
+                        customer.AddCost(cost);
                         Destroy(gameObject);
                     }
                 }

@@ -21,22 +21,28 @@ public enum IngredientType
 public class Dictionary : SerializableDictionary<IngredientType, RecipeType>{} // dictionary 인스펙터 표시
 
 // 생성된 오브젝트
-public abstract class CupMenu : MonoBehaviour
+public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
 {
     public delegate void ChangeSprite(CupType cupType, Dictionary ingredients);
     public ChangeSprite changeSprite;
 
-    public CupType cupType; // 컵 종류
-    [SerializeField]
-    protected int cost; // 가격
-    [SerializeField]
-    protected Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
-
     protected Vector3 originPosition;
-    [SerializeField]
-    protected GameObject trigger; // 트리거 오브젝트
+
+    [SerializeField] protected GameObject trigger; // 트리거 오브젝트
+
+    public CupType cupType; // 컵 종류
+    public int cost; // 가격
+
+    [SerializeField] protected Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
+    public Dictionary Ingredients
+    {
+        get
+        {
+            return ingredients;
+        }
+    }
     
-    protected CupMenu() // 초기화
+    protected virtual void Awake() // 초기화
     {
         ingredients.Add(IngredientType.Main, RecipeType.None);
         ingredients.Add(IngredientType.Sub, RecipeType.None);
@@ -44,6 +50,16 @@ public abstract class CupMenu : MonoBehaviour
         ingredients.Add(IngredientType.Cream, RecipeType.None);
 
         InitCost();
+    }
+
+    public void InitCost()
+    {
+        cost = 0;
+    }
+
+    public void AddCost(int c)
+    {
+        cost += c;
     }
 
     public void OnMouseDrag()
@@ -55,11 +71,14 @@ public abstract class CupMenu : MonoBehaviour
     {
         if(trigger != null)
         {
+            // add : 컵이 완성됐으면
             if(trigger.CompareTag("Customer"))
             {
                 Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-                if(trigger.GetComponent<Customer>().MatchMenu(sprite))
+                Customer customer = trigger.GetComponent<Customer>();
+                if(customer.MatchMenu(sprite))
                 {
+                    customer.AddCost(cost);
                     Destroy(gameObject);
                 }
             }
@@ -81,21 +100,6 @@ public abstract class CupMenu : MonoBehaviour
         trigger = null;
     }
 
-    protected void InitCost()
-    {
-        cost = 0;
-    }
-
-    public void AddCost(int c)
-    {
-        cost += c;
-    }
-
-    public Dictionary GetIngredients()
-    {
-        return ingredients;
-    }
-
     public void SetIngredients(IngredientType ingredient, RecipeType recipe)
     {
         ingredients[ingredient] = recipe;
@@ -105,8 +109,10 @@ public abstract class CupMenu : MonoBehaviour
 
 public class EspressoCup : CupMenu
 {
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         cupType = CupType.EspressoCup;
         Debug.Log("에소프레소잔 생성");
 
@@ -123,8 +129,10 @@ public class EspressoCup : CupMenu
 
 public class MugCup : CupMenu
 {
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         cupType = CupType.MugCup;
         Debug.Log("머그잔 생성");
 
@@ -141,8 +149,10 @@ public class MugCup : CupMenu
 
 public class IceCup : CupMenu
 {
-    void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         cupType = CupType.IceCup;
         Debug.Log("얼음잔 생성");
 

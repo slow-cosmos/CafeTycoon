@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class Water : Recipe
 {
-    void Awake()
+    protected override void Awake()
     {
-        renderer = GetComponent<SpriteRenderer>();
-        originPosition = transform.position;
+        base.Awake();
+        InitCost();
+    }
 
-        cost = 5; // 가격 불러오는 걸로 갱신
+    public override void InitCost()
+    {
+        // 업그레이드 정보에 맞춰 가격 초기화
+        cost = 5;
     }
 
     public override void OnMouseUp()
@@ -29,7 +33,7 @@ public class Water : Recipe
 
     protected override bool IsAddable(CupMenu cup)
     {
-        Dictionary ingredients = cup.GetIngredients();
+        Dictionary ingredients = cup.Ingredients;
         if(cup.cupType != CupType.EspressoCup)
         {
             if(ingredients[IngredientType.Sub] == RecipeType.None &&

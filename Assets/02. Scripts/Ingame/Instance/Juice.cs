@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Juice : MonoBehaviour
+public class Juice : MonoBehaviour, ICostInit
 {
     private Vector3 originPosition;
     [SerializeField]
@@ -14,7 +14,13 @@ public class Juice : MonoBehaviour
     void Awake()
     {
         originPosition = transform.position;
-        cost = 5; // 가격 불러오는 걸로 갱신
+        InitCost();
+    }
+
+    public void InitCost()
+    {
+        // 업그레이드 정보에 맞춰 가격 초기화
+        cost = 5;
     }
 
     public void OnMouseDrag()
@@ -29,8 +35,10 @@ public class Juice : MonoBehaviour
             if(trigger.CompareTag("Customer"))
             {
                 Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-                if(trigger.GetComponent<Customer>().MatchMenu(sprite))
+                Customer customer = trigger.GetComponent<Customer>();
+                if(customer.MatchMenu(sprite))
                 {
+                    customer.AddCost(cost);
                     Destroy(gameObject);
                 }
             }

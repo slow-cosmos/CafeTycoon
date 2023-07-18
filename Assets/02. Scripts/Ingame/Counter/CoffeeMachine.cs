@@ -6,17 +6,14 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
 {
     public GameObject coffeeObject;
 
-    [SerializeField]
-    Group group;
+    [SerializeField] private Machines machines;
 
-    [SerializeField]
     public bool isWorking = false;
-
-    [SerializeField]
-    float timer;
+    [SerializeField] private float timer;
 
     void Awake()
     {
+        machines = gameObject.transform.parent.GetComponent<Machines>();
         timer = 3.0f; // 임시 타이머
     }
     
@@ -56,14 +53,14 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
     public List<GameObject> GetEmptyList()
     {
         List<GameObject> emptyList = new List<GameObject>();
-        List<GameObject> machines = group.GetObjects();
-        for(int i=0;i<group.GetObjectsCount();i++) // 활성화된 머신 중에
+        List<GameObject> machinesList = machines.MachinesList;
+        for(int i=0;i<machines.MachineCount;i++) // 활성화된 머신 중에
         {
-            Holder holder = machines[i].transform.GetChild(0).GetComponent<Holder>();
-            CoffeeMachine machine = machines[i].GetComponent<CoffeeMachine>();
+            Holder holder = machinesList[i].transform.GetChild(0).GetComponent<Holder>();
+            CoffeeMachine machine = machinesList[i].GetComponent<CoffeeMachine>();
             if(!machine.isWorking && holder.Object == null) // 홀더가 비어있고, 머신이 작동 중이지 않은
             {
-                emptyList.Add(machines[i]);
+                emptyList.Add(machinesList[i]);
             }
         }
         return emptyList;

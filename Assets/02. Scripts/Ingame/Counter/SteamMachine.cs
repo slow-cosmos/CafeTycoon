@@ -5,14 +5,11 @@ using UnityEngine;
 public class SteamMachine : MonoBehaviour, IMakeMenu
 {
     public GameObject hotMilkObject;
-    [SerializeField]
-    Holder holder;
 
-    [SerializeField]
-    bool isWorking = false;
+    [SerializeField] private Holder holder;
 
-    [SerializeField]
-    float timer;
+    [SerializeField] private bool isWorking = false;
+    [SerializeField] private float timer;
 
     void Awake()
     {
