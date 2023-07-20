@@ -17,6 +17,7 @@ public abstract class DoughMenu : MonoBehaviour, ICostInit
     [SerializeField] private BakedType bakedType;
 
     public int cost;
+    public OrderType menu;
 
     public abstract void InitCost();
 
@@ -39,9 +40,8 @@ public abstract class DoughMenu : MonoBehaviour, ICostInit
             {
                 if(bakedType == BakedType.Baked) // 타지 않았으면
                 {
-                    Sprite sprite = GetComponent<SpriteRenderer>().sprite;
                     Customer customer = trigger.GetComponent<Customer>();
-                    if(customer.MatchMenu(sprite))
+                    if(customer.MatchMenu(menu))
                     {
                         customer.AddCost(cost);
                         Destroy(gameObject);

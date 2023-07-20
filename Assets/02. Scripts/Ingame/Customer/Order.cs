@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public enum OrderType
 {
+    None,
     Espresso,
     EspressoConPanna,
     Americano,

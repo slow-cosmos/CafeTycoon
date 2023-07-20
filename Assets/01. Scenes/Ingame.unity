@@ -299,6 +299,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79444bebdb71fdf448524e9aaae529a8, type: 3}
+--- !u!1 &122895983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7028173339871187591, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+  m_PrefabInstance: {fileID: 3623925740027852081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &136548142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,6 +1512,11 @@ MonoBehaviour:
   steamMachines: {fileID: 2106305443}
   ovens: {fileID: 797638357568939190}
   mixer: {fileID: 1508101664}
+--- !u!1 &720336205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 315839077700415713, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+  m_PrefabInstance: {fileID: 3669222525373915662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &762976259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2138,7 +2148,6 @@ MonoBehaviour:
   doughObject: {fileID: 3160036302179795029, guid: 0458915813cc2b446a40a4cd81885534, type: 3}
   sprite: {fileID: -410682812, guid: 581692e4936b8244ebfea18b70116fab, type: 3}
   trigger: {fileID: 0}
-  doughType: 0
 --- !u!114 &1320136432 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6047177611719241813, guid: a695347397df21f4a8a01167cbe00928, type: 3}
@@ -2200,7 +2209,6 @@ MonoBehaviour:
   doughObject: {fileID: 3160036302179795029, guid: 6b7a310b19660a04a89baab926e3db3b, type: 3}
   sprite: {fileID: 1705064573, guid: 9fdb8d830f422724eaf24870ba7eb895, type: 3}
   trigger: {fileID: 0}
-  doughType: 1
 --- !u!54 &1326097605
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2780,6 +2788,11 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &1598922447 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 743807046594186579, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+  m_PrefabInstance: {fileID: 3669222525373915662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1630618724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3190,6 +3203,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844533053}
   m_CullTransparentMesh: 1
+--- !u!1 &1881670841 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7028173338046430149, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+  m_PrefabInstance: {fileID: 3623925740027852081}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1912421471 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9067217033543072475, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+  m_PrefabInstance: {fileID: 3669222525373915662}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1922421890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7028173338838503125, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+  m_PrefabInstance: {fileID: 3623925740027852081}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1979173544 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2101106661102931210, guid: f3d0a4ca9b886564e94833ecd64e842a, type: 3}
@@ -3261,10 +3289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e154ecde6e6e1646b08cb7ac736828d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  group:
-  - {fileID: 1485656702}
-  - {fileID: 1176431140}
-  count: 0
+  machinesList: []
+  machinesCount: 0
 --- !u!1 &1816163782455511236
 GameObject:
   m_ObjectHideFlags: 0
@@ -3306,6 +3332,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 709460546}
     m_Modifications:
+    - target: {fileID: 3623925740705348369, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+      propertyPath: machinesList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623925740705348369, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+      propertyPath: machinesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 1881670841}
+    - target: {fileID: 3623925740705348369, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+      propertyPath: machinesList.Array.data[1]
+      value: 
+      objectReference: {fileID: 122895983}
+    - target: {fileID: 3623925740705348369, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+      propertyPath: machinesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1922421890}
     - target: {fileID: 3623925740705348396, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
       propertyPath: m_Name
       value: Mixer
@@ -3419,6 +3461,22 @@ PrefabInstance:
       propertyPath: menu
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6047177611719241813, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+      propertyPath: machinesList.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047177611719241813, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+      propertyPath: machinesList.Array.data[0]
+      value: 
+      objectReference: {fileID: 720336205}
+    - target: {fileID: 6047177611719241813, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+      propertyPath: machinesList.Array.data[1]
+      value: 
+      objectReference: {fileID: 1912421471}
+    - target: {fileID: 6047177611719241813, guid: a695347397df21f4a8a01167cbe00928, type: 3}
+      propertyPath: machinesList.Array.data[2]
+      value: 
+      objectReference: {fileID: 1598922447}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a695347397df21f4a8a01167cbe00928, type: 3}
 --- !u!1001 &6165946108210657483

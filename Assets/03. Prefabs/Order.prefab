@@ -84,6 +84,7 @@ MonoBehaviour:
   rectTransform: {fileID: 6983495081381874912}
   image: {fileID: 28891119181206380}
   sprites:
+  - {fileID: 0}
   - {fileID: -1951055780, guid: 963545e9feb81e744a429ff88b1d7445, type: 3}
   - {fileID: -642734083, guid: 963545e9feb81e744a429ff88b1d7445, type: 3}
   - {fileID: 1199118452, guid: 963545e9feb81e744a429ff88b1d7445, type: 3}

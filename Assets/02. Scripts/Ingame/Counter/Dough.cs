@@ -2,25 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DoughType
-{
-    Cookie,
-    Doughnut
-}
-
 public class Dough : MonoBehaviour
 {
-    public GameObject doughObject; // 만들어진 도우
+    public GameObject doughObject; // 구운 반죽
 
-    BoxCollider collider;
-    SpriteRenderer renderer;
+    private BoxCollider collider;
+    private SpriteRenderer renderer;
     public Sprite sprite;
     Vector3 originPosition;
-    [SerializeField]
-    GameObject trigger; // 트리거 오브젝트
-
-    [SerializeField]
-    DoughType doughType;
+    [SerializeField] private GameObject trigger; // 트리거 오브젝트
 
     void Awake()
     {

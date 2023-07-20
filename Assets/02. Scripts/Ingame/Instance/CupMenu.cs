@@ -32,6 +32,8 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
 
     public CupType cupType; // 컵 종류
     public int cost; // 가격
+    public bool isCompleted; // 컵이 완성 됐는지
+    public OrderType menu; // 완성된 메뉴 타입
 
     [SerializeField] protected Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
     public Dictionary Ingredients
@@ -50,6 +52,11 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
         ingredients.Add(IngredientType.Cream, RecipeType.None);
 
         InitCost();
+
+        isCompleted = false;
+        menu = OrderType.None;
+
+        changeSprite += GetComponent<SpriteChanger>().ChangeSprite;
     }
 
     public void InitCost()
@@ -71,16 +78,22 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
     {
         if(trigger != null)
         {
-            // add : 컵이 완성됐으면
             if(trigger.CompareTag("Customer"))
             {
-                Sprite sprite = GetComponent<SpriteRenderer>().sprite;
-                Customer customer = trigger.GetComponent<Customer>();
-                if(customer.MatchMenu(sprite))
+                if(isCompleted)
                 {
-                    customer.AddCost(cost);
-                    Destroy(gameObject);
+                    Customer customer = trigger.GetComponent<Customer>();
+                    if(customer.MatchMenu(menu))
+                    {
+                        customer.AddCost(cost); 
+                        Destroy(gameObject);
+                    }
                 }
+                else
+                {
+                    Debug.Log("완성이 되어야 줄 수 있음");
+                }
+                
             }
             if(trigger.CompareTag("Trash"))
             {
@@ -119,11 +132,38 @@ public class EspressoCup : CupMenu
         originPosition = transform.position;
     }
 
-    void Start()
+    private void Start()
     {
         changeSprite(cupType, ingredients);
         gameObject.AddComponent<BoxCollider>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
+    }
+
+    private void Update()
+    {
+        if(!isCompleted)
+        {
+            if(ingredients[IngredientType.Main] != RecipeType.None)
+            {
+                isCompleted = true;
+            }
+        }
+        else
+        {
+            if(ingredients[IngredientType.Main] == RecipeType.Espresso)
+            {
+                if(ingredients[IngredientType.Cream] == RecipeType.None)
+                {
+                    //Debug.Log("에스프레소");
+                    menu = OrderType.Espresso;
+                }
+                else if(ingredients[IngredientType.Cream] == RecipeType.Cream)
+                {
+                    //Debug.Log("콘파냐");
+                    menu = OrderType.EspressoConPanna;
+                }
+            }
+        }
     }
 }
 
@@ -139,11 +179,55 @@ public class MugCup : CupMenu
         originPosition = transform.position;
     }
 
-    void Start()
+    private void Start()
     {
         changeSprite(cupType, ingredients);
         gameObject.AddComponent<BoxCollider>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
+    }
+
+    private void Update()
+    {
+        if(!isCompleted)
+        {
+            if(ingredients[IngredientType.Main] != RecipeType.None &&
+                ingredients[IngredientType.Sub] != RecipeType.None)
+            {
+                isCompleted = true;
+            }
+        }
+        else
+        {
+            if(ingredients[IngredientType.Main] == RecipeType.Espresso)
+            {
+                if(ingredients[IngredientType.Sub] == RecipeType.Water)
+                {
+                    if(ingredients[IngredientType.Cream] == RecipeType.None)
+                    {
+                        //Debug.Log("아메리카노");
+                        menu = OrderType.Americano;
+                    }
+                    else
+                    {
+                        //Debug.Log("카페비엔나");
+                        menu = OrderType.CaffeVienna;
+                    }
+                }
+                else if(ingredients[IngredientType.Sub] == RecipeType.HotMilk)
+                {
+                    //Debug.Log("카페라떼");
+                    menu = OrderType.CaffeLatte;
+                }
+            }
+            else if(ingredients[IngredientType.Main] == RecipeType.GreenTea)
+            {
+                if(ingredients[IngredientType.Sub] == RecipeType.HotMilk)
+                {
+                    //Debug.Log("그린티라떼");
+                    menu = OrderType.GreenTeaLatte;
+                }
+            }
+        }
     }
 }
 
@@ -159,10 +243,55 @@ public class IceCup : CupMenu
         originPosition = transform.position;
     }
 
-    void Start()
+    private void Start()
     {
         changeSprite(cupType, ingredients);
         gameObject.AddComponent<BoxCollider>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
+    }
+
+    private void Update()
+    {
+        if(!isCompleted)
+        {
+            if(ingredients[IngredientType.Main] != RecipeType.None &&
+                ingredients[IngredientType.Sub] != RecipeType.None &&
+                ingredients[IngredientType.Ice] != RecipeType.None)
+            {
+                isCompleted = true;
+            }
+        }
+        else
+        {
+            if(ingredients[IngredientType.Main] == RecipeType.Espresso)
+            {
+                if(ingredients[IngredientType.Sub] == RecipeType.Water)
+                {
+                    if(ingredients[IngredientType.Cream] == RecipeType.None)
+                    {
+                        //Debug.Log("아이스 아메리카노");
+                        menu = OrderType.IceAmericano;
+                    }
+                    else
+                    {
+                        //Debug.Log("아이스 카페비엔나");
+                        menu = OrderType.IceCaffeVienna;
+                    }
+                }
+                else if(ingredients[IngredientType.Sub] == RecipeType.Milk)
+                {
+                    //Debug.Log("아이스 카페라떼");
+                    menu = OrderType.IceCaffeLatte;
+                }
+            }
+            else if(ingredients[IngredientType.Main] == RecipeType.GreenTea)
+            {
+                if(ingredients[IngredientType.Sub] == RecipeType.Milk)
+                {
+                    //Debug.Log("아이스 그린티라떼");
+                    menu = OrderType.IceGreenTeaLatte;
+                }
+            }
+        }
     }
 }

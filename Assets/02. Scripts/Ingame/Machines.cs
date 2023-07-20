@@ -23,6 +23,14 @@ public class Machines : MonoBehaviour
         }
     }
 
+    private void Awake()
+    {
+        for(int i=0;i<transform.childCount;i++)
+        {
+            machinesList.Add(transform.GetChild(i).gameObject);
+        }
+    }
+
     public void Init(int cnt)
     {
         machinesCount = cnt; // 챕터 정보 받아오기

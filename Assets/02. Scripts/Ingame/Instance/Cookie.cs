@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Cookie : DoughMenu
 {
-    void Awake()
+    private void Awake()
     {
         originPosition = transform.position;
+
         InitCost();
+
+        menu = OrderType.Cookie;
     }
 
     public override void InitCost()

@@ -10,7 +10,7 @@ public class Cup : MonoBehaviour, IMakeMenu
 
     [SerializeField] private CupType cupType;
 
-    void OnMouseDown()
+    private void OnMouseDown()
     {
         MakeMenu();
     }

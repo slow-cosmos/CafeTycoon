@@ -4,16 +4,12 @@ using UnityEngine;
 
 public class MachinesManager : MonoBehaviour
 {
-    [SerializeField]
-    Machines coffeeMachines;
-    [SerializeField]
-    Machines steamMachines;
-    [SerializeField]
-    Machines ovens;
-    [SerializeField]
-    Machines mixer;
+    [SerializeField] private Machines coffeeMachines;
+    [SerializeField] private Machines steamMachines;
+    [SerializeField] private Machines ovens;
+    [SerializeField] private Machines mixer;
 
-    void Awake()
+    void Start()
     {
         //챕터 정보에서 받아오기
         coffeeMachines.Init(2);

@@ -11,13 +11,13 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
     public bool isWorking = false;
     [SerializeField] private float timer;
 
-    void Awake()
+    private void Awake()
     {
         machines = gameObject.transform.parent.GetComponent<Machines>();
         timer = 3.0f; // 임시 타이머
     }
     
-    void OnMouseDown()
+    private void OnMouseDown()
     {
         MakeMenu();
     }

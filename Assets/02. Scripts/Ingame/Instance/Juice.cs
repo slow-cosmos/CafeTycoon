@@ -5,16 +5,18 @@ using UnityEngine;
 public class Juice : MonoBehaviour, ICostInit
 {
     private Vector3 originPosition;
-    [SerializeField]
-    GameObject trigger; // 트리거 오브젝트
+    [SerializeField] private GameObject trigger; // 트리거 오브젝트
 
-    [SerializeField]
-    private int cost;
+    [SerializeField] private int cost;
+    public OrderType menu;
 
     void Awake()
     {
         originPosition = transform.position;
+
         InitCost();
+        
+        menu = OrderType.Juice;
     }
 
     public void InitCost()
@@ -34,9 +36,8 @@ public class Juice : MonoBehaviour, ICostInit
         {
             if(trigger.CompareTag("Customer"))
             {
-                Sprite sprite = GetComponent<SpriteRenderer>().sprite;
                 Customer customer = trigger.GetComponent<Customer>();
-                if(customer.MatchMenu(sprite))
+                if(customer.MatchMenu(menu))
                 {
                     customer.AddCost(cost);
                     Destroy(gameObject);

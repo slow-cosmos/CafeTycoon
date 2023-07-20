@@ -45,12 +45,6 @@ public class SpriteChanger : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    void Start()
-    {
-        CupMenu menu = GetComponent<CupMenu>();
-        menu.changeSprite += ChangeSprite;
-    }
-
     public void ChangeSprite(CupType cupType, Dictionary ingredients)
     {
         int mainIdx = (int)ingredients[IngredientType.Main];

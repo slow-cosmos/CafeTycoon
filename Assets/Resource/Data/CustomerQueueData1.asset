@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0643e2e0235da4fb366172cb6e76b3, type: 3}
   m_Name: CustomerQueueData1
   m_EditorClassIdentifier: 
-  customerCount: 4
   customerList:
   - customerType: 0
-    orderList: 00000000
+    orderList: 0a0000000b000000
   - customerType: 0
-    orderList: 00000000
+    orderList: 0c00000003000000
   - customerType: 0
-    orderList: 0000000000000000
+    orderList: 0c00000003000000
   - customerType: 0
-    orderList: 00000000
+    orderList: 0c00000003000000
   - customerType: 0
-    orderList: 0300000001000000
+    orderList: 0c00000003000000
+  - customerType: 0
+    orderList: 0100000002000000

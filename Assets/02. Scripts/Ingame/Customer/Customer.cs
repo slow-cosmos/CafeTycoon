@@ -10,6 +10,10 @@ public enum CustomerType
 
 public class Customer : MonoBehaviour, ICostInit, ICostAdd
 {
+    [SerializeField] private GameObject coinObject;
+    [SerializeField] private GameObject orderObject;
+    [SerializeField] private GameObject timerObject;
+
     [SerializeField] private List<Order> orderList = new List<Order>();
     [SerializeField] private int orderCount;
 
@@ -48,18 +52,17 @@ public class Customer : MonoBehaviour, ICostInit, ICostAdd
         }
     }
 
-    public bool MatchMenu(Sprite menu)
+    public bool MatchMenu(OrderType menu)
     {
-        // 현재 스프라이트가 같은지 판별해서 처리 중 -> 어떻게 바꿀지 생각
         foreach(var order in orderList)
         {
             if(order.gameObject.activeSelf) // 활성화 된 메뉴만 확인
             {
-                Sprite sprite = order.GetComponent<Image>().sprite;
-                if(sprite == menu)
+                if(order.orderType == menu)
                 {
                     order.gameObject.SetActive(false);
                     orderCount--;
+                    timer.PlusTime(3);
                     return true;
                 }
             }
@@ -70,14 +73,23 @@ public class Customer : MonoBehaviour, ICostInit, ICostAdd
 
     void SuccessOrder()
     {
-        Debug.Log("주문 성공");
-        Destroy(gameObject);
+        coinObject.SetActive(true);
+        orderObject.SetActive(false);
+        timerObject.SetActive(false);
     }
 
     void FailOrder()
     {
-        Debug.Log("주문 실패");
-        Destroy(gameObject);
+        if(cost == 0)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            coinObject.SetActive(true);
+            orderObject.SetActive(false);
+            timerObject.SetActive(false);
+        }
     }
 
     public void InitCost()

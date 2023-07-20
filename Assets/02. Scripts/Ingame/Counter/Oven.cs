@@ -12,7 +12,7 @@ public class Oven : MonoBehaviour, IMakeMenuObject
 
     public bool isClicked = false;
 
-    void Awake()
+    private void Awake()
     {
         timer = 3.0f; // 임시 타이머
         burnedTime = 3.0f;

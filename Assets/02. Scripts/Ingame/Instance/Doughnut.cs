@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class Doughnut : DoughMenu
 {
-    void Awake()
+    private void Awake()
     {
         originPosition = transform.position;
+
         InitCost();
+
+        menu = OrderType.Doughnut;
     }
 
     public override void InitCost()

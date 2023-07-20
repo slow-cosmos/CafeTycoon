@@ -10,6 +10,8 @@ public class Timer : MonoBehaviour
     public float time;
     public float timeSpeed;
 
+    private float curTime;
+
     public bool isEnd;
 
     void Start()
@@ -20,7 +22,7 @@ public class Timer : MonoBehaviour
 
     IEnumerator OrderTimer()
     {
-        float curTime = time;
+        curTime = time;
         while(curTime > 0)
         {
             curTime -= Time.deltaTime * timeSpeed;
@@ -33,6 +35,15 @@ public class Timer : MonoBehaviour
                 curTime = 0;
                 yield break;
             }
+        }
+    }
+
+    public void PlusTime(float plus)
+    {
+        curTime += plus;
+        if(curTime>time)
+        {
+            curTime = time;
         }
     }
 }
