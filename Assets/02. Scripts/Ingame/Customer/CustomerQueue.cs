@@ -8,11 +8,11 @@ public class CustomerQueue : MonoBehaviour
 
     public CustomerQueueData customerQueueData;
 
-    public Holder[] holders = new Holder[4];
+    public Holder[] holders = new Holder[4]; // 손님 좌석
 
     public float timeGap;
 
-    void Awake()
+    private void Awake()
     {
         // 챕터 정보로 손님큐 불러오기
         timeGap = 3;

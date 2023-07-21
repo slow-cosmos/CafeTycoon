@@ -3,18 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Timer : MonoBehaviour
+public class CustomerTimer : MonoBehaviour
 {
     [SerializeField] private Image gauge;
 
-    public float time;
-    public float timeSpeed;
+    private float time = 20;
+    private float timeSpeed;
 
     private float curTime;
 
     public bool isEnd;
 
-    void Start()
+    private void Awake()
     {
         isEnd = false;
         StartCoroutine(OrderTimer());
@@ -36,6 +36,11 @@ public class Timer : MonoBehaviour
                 yield break;
             }
         }
+    }
+
+    public void InitTimeSpeed(float speed)
+    {
+        timeSpeed = speed;
     }
 
     public void PlusTime(float plus)

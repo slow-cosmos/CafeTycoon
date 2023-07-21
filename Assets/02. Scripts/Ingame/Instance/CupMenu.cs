@@ -83,9 +83,8 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
                 if(isCompleted)
                 {
                     Customer customer = trigger.GetComponent<Customer>();
-                    if(customer.MatchMenu(menu))
+                    if(customer.MatchMenu(menu, cost))
                     {
-                        customer.AddCost(cost); 
                         Destroy(gameObject);
                     }
                 }

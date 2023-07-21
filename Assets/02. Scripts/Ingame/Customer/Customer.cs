@@ -8,29 +8,26 @@ public enum CustomerType
     Normal,
 }
 
-public class Customer : MonoBehaviour, ICostInit, ICostAdd
+public class Customer : MonoBehaviour
 {
-    [SerializeField] private GameObject coinObject;
     [SerializeField] private GameObject orderObject;
+    [SerializeField] private GameObject coinObject;
     [SerializeField] private GameObject timerObject;
 
     [SerializeField] private List<Order> orderList = new List<Order>();
     [SerializeField] private int orderCount;
 
-    private float time = 20;
-    private float timeSpeed = 1;
-    [SerializeField] private Timer timer;
+    [SerializeField] private CustomerTimer timer;
+    [SerializeField] private Coin coin;
 
-    public int cost;
+    [SerializeField] private Dialog dialog;
 
-    void Awake()
+    private void Awake()
     {
-        timer.time = time;
-        timer.timeSpeed = timeSpeed;
-        InitCost();
+        timer.InitTimeSpeed(1); // 노멀 손님
     }
 
-    void Update()
+    private void Update()
     {
         if(timer.isEnd)
         {
@@ -52,7 +49,7 @@ public class Customer : MonoBehaviour, ICostInit, ICostAdd
         }
     }
 
-    public bool MatchMenu(OrderType menu)
+    public bool MatchMenu(OrderType menu, int cost)
     {
         foreach(var order in orderList)
         {
@@ -63,11 +60,13 @@ public class Customer : MonoBehaviour, ICostInit, ICostAdd
                     order.gameObject.SetActive(false);
                     orderCount--;
                     timer.PlusTime(3);
+                    coin.AddCost(cost);
                     return true;
                 }
             }
         }
         Debug.Log("주문 안했어요");
+        dialog.ChangeDialog(DialogType.Warning);
         return false;
     }
 
@@ -80,7 +79,8 @@ public class Customer : MonoBehaviour, ICostInit, ICostAdd
 
     void FailOrder()
     {
-        if(cost == 0)
+        dialog.ChangeDialog(DialogType.Warning);
+        if(coin.Cost == 0)
         {
             Destroy(gameObject);
         }
@@ -90,15 +90,5 @@ public class Customer : MonoBehaviour, ICostInit, ICostAdd
             orderObject.SetActive(false);
             timerObject.SetActive(false);
         }
-    }
-
-    public void InitCost()
-    {
-        cost = 0;
-    }
-
-    public void AddCost(int c)
-    {
-        cost += c;
     }
 }

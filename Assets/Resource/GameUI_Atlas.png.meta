@@ -188,7 +188,7 @@ TextureImporter:
         width: 82
         height: 83
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -196,6 +196,111 @@ TextureImporter:
       bones: []
       spriteID: 97708b727d4d12440bf3bdbe73d62135
       internalID: -1632206075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 0
+        width: 292
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e7ac986c26572e489048a98c918dd3f
+      internalID: -2118607355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 292
+        height: 184
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: decfd677eb4d3b0419eaf64e13820c55
+      internalID: 447584291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 349
+        width: 240
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa4cefa5defb5c14f9f6fe79516e9ffc
+      internalID: 465635072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 196
+        width: 418
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf9c5422a9dd4294e97dfa7758ad6ff3
+      internalID: -199203003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 321
+        width: 364
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0ea83e9b89fef94fb0fabf5a982e4b5
+      internalID: 1836385457
       vertices: []
       indices: 
       edges: []
@@ -211,8 +316,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      GameUI_Atlas_4: -2118607355
+      GameUI_Atlas_5: 447584291
+      GameUI_Atlas_8: 1836385457
       GameUI_Atlas_1: 1555343523
       GameUI_Atlas_0: 529773292
+      GameUI_Atlas_7: -199203003
+      GameUI_Atlas_6: 465635072
       GameUI_Atlas_3: -1632206075
       GameUI_Atlas_2: -1906625547
   spritePackingTag: 

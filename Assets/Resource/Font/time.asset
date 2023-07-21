@@ -57,11 +57,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: SUITE-ExtraBold SDF
+  m_Name: time
   m_EditorClassIdentifier: 
-  hashCode: -1102853699
+  hashCode: 4074549
   material: {fileID: 2084300574001502833}
-  materialHashCode: -1297835395
+  materialHashCode: 769739253
   m_Version: 1.1.0
   m_SourceFontFileGUID: 910ccf4f05c5c95428d323fb82dfca85
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 910ccf4f05c5c95428d323fb82dfca85, type: 3}
@@ -2779,7 +2779,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.427
+    - _OutlineWidth: 0.36
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.8333333

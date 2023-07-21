@@ -1,26 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using TMPro;
 
-public class Coin : MonoBehaviour, IPointerClickHandler
+public class Coin : MonoBehaviour, ICostInit, ICostAdd
 {
-    public GameObject coinText;
-    public Image coinImage;
-
-    public void OnPointerClick(PointerEventData eventData)
+    [SerializeField] private int cost;
+    public int Cost
     {
-        StartCoroutine(CoinText());
+        get
+        {
+            return cost;
+        }
     }
 
-    IEnumerator CoinText()
+    private void Awake()
     {
-        coinImage.enabled = false;
-        coinText.SetActive(true);
-        coinText.GetComponent<TMP_Text>().text = "+"+gameObject.transform.parent.GetComponent<Customer>().cost;
-        yield return new WaitForSeconds(1);
-        Destroy(transform.parent.gameObject);
+        InitCost();
+    }
+
+    public void InitCost()
+    {
+        cost = 0;
+    }
+
+    public void AddCost(int c)
+    {
+        cost += c;
     }
 }

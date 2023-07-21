@@ -37,9 +37,8 @@ public class Juice : MonoBehaviour, ICostInit
             if(trigger.CompareTag("Customer"))
             {
                 Customer customer = trigger.GetComponent<Customer>();
-                if(customer.MatchMenu(menu))
+                if(customer.MatchMenu(menu, cost))
                 {
-                    customer.AddCost(cost);
                     Destroy(gameObject);
                 }
             }

@@ -41,9 +41,8 @@ public abstract class DoughMenu : MonoBehaviour, ICostInit
                 if(bakedType == BakedType.Baked) // 타지 않았으면
                 {
                     Customer customer = trigger.GetComponent<Customer>();
-                    if(customer.MatchMenu(menu))
+                    if(customer.MatchMenu(menu, cost))
                     {
-                        customer.AddCost(cost);
                         Destroy(gameObject);
                     }
                 }
