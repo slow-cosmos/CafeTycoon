@@ -17,12 +17,16 @@ public class Timer : MonoBehaviour
     private void Awake()
     {
         time = 70;
+        curTime = time;
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(StartTimer());
     }
 
     IEnumerator StartTimer()
     {
-        curTime = time;
         while(curTime > 0)
         {
             curTime -= Time.deltaTime;

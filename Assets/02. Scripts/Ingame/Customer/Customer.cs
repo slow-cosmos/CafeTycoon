@@ -22,6 +22,8 @@ public class Customer : MonoBehaviour
 
     [SerializeField] private Dialog dialog;
 
+    private bool endFlag = false;
+
     private void Awake()
     {
         timer.InitTimeSpeed(1); // 노멀 손님
@@ -29,13 +31,18 @@ public class Customer : MonoBehaviour
 
     private void Update()
     {
-        if(timer.isEnd)
+        if(!endFlag)
         {
-            FailOrder();
-        }
-        else if(orderCount == 0)
-        {
-            SuccessOrder();
+            if(timer.isEnd)
+            {
+                endFlag = true;
+                StartCoroutine(FailOrder());
+            }
+            else if(orderCount == 0)
+            {
+                endFlag = true;
+                StartCoroutine(SuccessOrder());
+            }
         }
     }
 
@@ -51,35 +58,57 @@ public class Customer : MonoBehaviour
 
     public bool MatchMenu(OrderType menu, int cost)
     {
+        if(endFlag) return false;
+        
         foreach(var order in orderList)
         {
             if(order.gameObject.activeSelf) // 활성화 된 메뉴만 확인
             {
                 if(order.orderType == menu)
                 {
-                    order.gameObject.SetActive(false);
                     orderCount--;
+                    order.gameObject.SetActive(false);
                     timer.PlusTime(3);
                     coin.AddCost(cost);
                     return true;
                 }
             }
         }
-        Debug.Log("주문 안했어요");
-        dialog.ChangeDialog(DialogType.Warning);
+        StartCoroutine(WarningOrder());
         return false;
     }
 
-    void SuccessOrder()
+    IEnumerator WarningOrder()
     {
-        coinObject.SetActive(true);
         orderObject.SetActive(false);
         timerObject.SetActive(false);
+
+        dialog.StartCoroutine(dialog.ChangeDialog(DialogType.Warning));
+        yield return new WaitForSeconds(1);
+
+        orderObject.SetActive(true);
+        timerObject.SetActive(true);
     }
 
-    void FailOrder()
+    IEnumerator SuccessOrder()
     {
-        dialog.ChangeDialog(DialogType.Warning);
+        orderObject.SetActive(false);
+        timerObject.SetActive(false);
+
+        dialog.StartCoroutine(dialog.ChangeDialog(DialogType.Success));
+        yield return new WaitForSeconds(1);
+
+        coinObject.SetActive(true);
+    }
+
+    IEnumerator FailOrder()
+    {
+        orderObject.SetActive(false);
+        timerObject.SetActive(false);
+
+        dialog.StartCoroutine(dialog.ChangeDialog(DialogType.Fail));
+        yield return new WaitForSeconds(1);
+
         if(coin.Cost == 0)
         {
             Destroy(gameObject);
@@ -87,8 +116,6 @@ public class Customer : MonoBehaviour
         else
         {
             coinObject.SetActive(true);
-            orderObject.SetActive(false);
-            timerObject.SetActive(false);
         }
     }
 }

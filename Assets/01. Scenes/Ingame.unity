@@ -852,6 +852,7 @@ MonoBehaviour:
   - {fileID: 939914084}
   - {fileID: 2080763149}
   timeGap: 0
+  curTime: 0
 --- !u!1 &231667225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1398,7 +1399,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &438218250
 BoxCollider:
@@ -1857,7 +1858,7 @@ Transform:
   - {fileID: 200088259}
   - {fileID: 357861446}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &709460547
 MonoBehaviour:
@@ -2018,7 +2019,7 @@ GameObject:
   - component: {fileID: 788945743}
   - component: {fileID: 788945739}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: UICanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2077,7 +2078,7 @@ RectTransform:
   - {fileID: 1266794504}
   - {fileID: 729751038}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2381,7 +2382,7 @@ Transform:
   - {fileID: 136548145}
   - {fileID: 231667228}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1149691936 stripped
 MonoBehaviour:
@@ -3781,7 +3782,7 @@ RectTransform:
   - {fileID: 271879824}
   - {fileID: 230574702}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4149,7 +4150,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6165946108654715502, guid: f3d0a4ca9b886564e94833ecd64e842a, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6165946108654715502, guid: f3d0a4ca9b886564e94833ecd64e842a, type: 3}
       propertyPath: m_LocalScale.x

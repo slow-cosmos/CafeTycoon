@@ -13,24 +13,24 @@ public enum DialogType
 
 public class Dialog : MonoBehaviour
 {
+    [SerializeField] private RectTransform imageTransform;
     [SerializeField] private Image image;
     [SerializeField] private TMP_Text text;
 
-    public Sprite[] sprites = new Sprite[2];
-    public string[] strings = new string[2];
+    public Sprite[] sprites = new Sprite[3];
+    public string[] strings = new string[3];
 
-    public void ChangeDialog(DialogType dialog)
+    public IEnumerator ChangeDialog(DialogType dialog)
     {
-        StartCoroutine(StartChangeDialog(dialog));
-    }
+        int idx = (int)dialog;
 
-    IEnumerator StartChangeDialog(DialogType dialog)
-    {
         image.gameObject.SetActive(true);
         text.gameObject.SetActive(true);
 
-        image.sprite = sprites[(int)dialog];
-        text.text = strings[(int)dialog];
+        image.sprite = sprites[idx];
+        text.text = strings[idx];
+
+        imageTransform.sizeDelta = sprites[idx].bounds.size*100;
 
         yield return new WaitForSeconds(1);
 

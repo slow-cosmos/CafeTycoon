@@ -17,12 +17,16 @@ public class CustomerTimer : MonoBehaviour
     private void Awake()
     {
         isEnd = false;
+        curTime = time;
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(OrderTimer());
     }
 
     IEnumerator OrderTimer()
     {
-        curTime = time;
         while(curTime > 0)
         {
             curTime -= Time.deltaTime * timeSpeed;
