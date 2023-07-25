@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Score : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Score : MonoBehaviour
     }
 
     [SerializeField] private Image gauge;
+    [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private int curScore;
 
@@ -30,14 +32,20 @@ public class Score : MonoBehaviour
         }
 
         curScore = 0;
+
+        scoreText.text = "0";
         gauge.fillAmount = 0;
 
-        star3Score = 100; // 임시
+        star1Score = 50; // 임시
+        star2Score = 70;
+        star3Score = 100;
     }
 
-    public void FillScoreGauge(int coin)
+    public void AddScore(int coin)
     {
         curScore += coin;
+
+        scoreText.text = curScore.ToString();
         gauge.fillAmount = curScore >= star3Score ? 1 : (float)curScore / (float)star3Score;
     }
 }

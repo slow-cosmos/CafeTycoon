@@ -14,7 +14,7 @@ public class CoinUI : MonoBehaviour, IPointerClickHandler
     
     public void OnPointerClick(PointerEventData eventData)
     {
-        Score.Instance.FillScoreGauge(coin.Cost);
+        Score.Instance.AddScore(coin.Cost);
         StartCoroutine(CoinText());
     }
 

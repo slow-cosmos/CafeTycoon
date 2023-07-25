@@ -6,12 +6,10 @@ public class CustomerQueue : MonoBehaviour
 {
     public GameObject normalCustomer;
 
-    public CustomerQueueData customerQueueData;
-
     public Holder[] holders = new Holder[4]; // 손님 좌석
 
-    public float timeGap;
-    public float curTime;
+    [SerializeField] private float timeGap;
+    [SerializeField] private float curTime;
 
     private void Awake()
     {
@@ -27,10 +25,8 @@ public class CustomerQueue : MonoBehaviour
 
     IEnumerator CustomerQueueStart()
     {
-        //WaitForSeconds waitTime = new WaitForSeconds(timeGap);
-        for(int i=0;i<customerQueueData.CustomerList.Count;i++)
+        for(int i=0;i<ChapterManager.Instance.customerQueueData.CustomerList.Count;i++)
         {
-            //yield return waitTime;
             while(curTime > 0)
             {
                 curTime -= Time.deltaTime;
@@ -38,10 +34,23 @@ public class CustomerQueue : MonoBehaviour
             }
             curTime = timeGap;
             // 기다렸다가 들어오는 손님 기다렸다가 들어오도록 수정
-            
-            CustomerType customerType = customerQueueData.CustomerList[i].customerType;
-            List<OrderType> orderList = customerQueueData.CustomerList[i].orderList;
-            StartCoroutine(ComeInCustomer(customerType, orderList));
+
+            WaitForSeconds checkTime = new WaitForSeconds(0.1f);
+            while(true)
+            {
+                Holder seat = GetEmptySeat();
+                if(GetEmptySeat() == null)
+                {
+                    yield return checkTime;
+                }
+                else
+                {
+                    CustomerType customerType = ChapterManager.Instance.customerQueueData.CustomerList[i].customerType;
+                    List<OrderType> orderList = ChapterManager.Instance.customerQueueData.CustomerList[i].orderList;
+                    ComeInCustomer(seat, customerType, orderList);
+                    break;
+                }
+            }
         }
     }
 
@@ -57,16 +66,8 @@ public class CustomerQueue : MonoBehaviour
         return null;
     }
 
-    IEnumerator ComeInCustomer(CustomerType customerType, List<OrderType> orderList)
+    void ComeInCustomer(Holder seat, CustomerType customerType, List<OrderType> orderList)
     {
-        WaitForSeconds checkTime = new WaitForSeconds(0.1f);
-        while(GetEmptySeat() == null)
-        {
-            yield return checkTime;
-        }
-        
-        Holder seat = GetEmptySeat();
-
         switch(customerType)
         {
             case CustomerType.Normal:
