@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6914762be49276048b488a28e5e1a310, type: 3}
-  m_Name: 1
+  m_Name: 2
   m_EditorClassIdentifier: 
-  timer: 10
+  timer: 70
   timeGap: 3
-  star1Score: 40
-  star2Score: 50
-  star3Score: 70
+  star1Score: 70
+  star2Score: 80
+  star3Score: 90

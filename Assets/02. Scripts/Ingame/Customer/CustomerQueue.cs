@@ -13,8 +13,7 @@ public class CustomerQueue : MonoBehaviour
 
     private void Awake()
     {
-        // 챕터 정보로 손님큐 불러오기
-        timeGap = 3;
+        timeGap = ChapterManager.Instance.chapterData.TimeGap;
         curTime = timeGap;
     }
     

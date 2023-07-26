@@ -7,8 +7,8 @@ public class GoalPopup : MonoBehaviour
 {
     [SerializeField] private TMP_Text goal;
     
-    private void Start()
+    private void OnEnable()
     {
-        goal.text = "100"; //임시
+        goal.text = ChapterManager.Instance.chapterData.Star1Score.ToString();
     }
 }

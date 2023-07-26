@@ -19,6 +19,13 @@ public class Score : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
 
     [SerializeField] private int curScore;
+    public int CurScore
+    {
+        get
+        {
+            return curScore;
+        }
+    }
 
     [SerializeField] private int star1Score;
     [SerializeField] private int star2Score;
@@ -36,9 +43,9 @@ public class Score : MonoBehaviour
         scoreText.text = "0";
         gauge.fillAmount = 0;
 
-        star1Score = 50; // 임시
-        star2Score = 70;
-        star3Score = 100;
+        star1Score = ChapterManager.Instance.chapterData.Star1Score;
+        star2Score = ChapterManager.Instance.chapterData.Star2Score;
+        star3Score = ChapterManager.Instance.chapterData.Star3Score;
     }
 
     public void AddScore(int coin)

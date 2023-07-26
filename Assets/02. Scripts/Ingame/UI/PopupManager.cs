@@ -9,13 +9,9 @@ public class PopupManager : MonoBehaviour
     [SerializeField] private GameObject customerQueue;
 
     [SerializeField] private GameObject goalPopup;
+    [SerializeField] private GameObject endPopup;
 
-    private void Start()
-    {
-        StartCoroutine(StartGame());
-    }
-
-    IEnumerator StartGame()
+    public IEnumerator GoalPopup()
     {
         goalPopup.SetActive(true);
 
@@ -27,13 +23,14 @@ public class PopupManager : MonoBehaviour
         customerQueue.SetActive(true);
     }
 
-    private void PauseGame()
+    public void PausePopup()
     {
         
     }
 
-    private void EndGame()
+    public void EndPopup()
     {
-        // 최종 점수 팝업
+        //타임오버
+        endPopup.SetActive(true);
     }
 }

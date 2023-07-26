@@ -23,7 +23,6 @@ public class ChapterManager : MonoBehaviour
         if(instance == null)
         {
             instance = this;
-            Init();
             DontDestroyOnLoad(this.gameObject);
         }
         else
@@ -33,15 +32,22 @@ public class ChapterManager : MonoBehaviour
     }
     #endregion
 
-    [SerializeField] private int curChapter=1; // 임시
+    [SerializeField] private int curChapter;
+    public int CurChapter
+    {
+        get
+        {
+            return curChapter;
+        }
+        set
+        {
+            curChapter = value;
+            Init();
+        }
+    }
 
     public ChapterData chapterData;
     public CustomerQueueData customerQueueData;
-
-    private void Start()
-    {
-        
-    }
 
     private void Init()
     {
