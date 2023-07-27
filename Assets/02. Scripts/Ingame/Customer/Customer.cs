@@ -23,6 +23,7 @@ public class Customer : MonoBehaviour
     [SerializeField] private Dialog dialog;
 
     private bool endFlag = false;
+    public bool EndFlag => endFlag;
 
     private void Awake()
     {

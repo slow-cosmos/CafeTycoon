@@ -22,7 +22,7 @@ public class CustomerQueue : MonoBehaviour
         StartCoroutine(CustomerQueueStart());
     }
 
-    IEnumerator CustomerQueueStart()
+    private IEnumerator CustomerQueueStart()
     {
         for(int i=0;i<ChapterManager.Instance.customerQueueData.CustomerList.Count;i++)
         {
@@ -53,7 +53,7 @@ public class CustomerQueue : MonoBehaviour
         }
     }
 
-    Holder GetEmptySeat() // 빈자리 찾기
+    private Holder GetEmptySeat() // 빈자리 찾기
     {
         for(int i=0;i<4;i++)
         {
@@ -65,7 +65,7 @@ public class CustomerQueue : MonoBehaviour
         return null;
     }
 
-    void ComeInCustomer(Holder seat, CustomerType customerType, List<OrderType> orderList)
+    private void ComeInCustomer(Holder seat, CustomerType customerType, List<OrderType> orderList)
     {
         switch(customerType)
         {
@@ -74,6 +74,17 @@ public class CustomerQueue : MonoBehaviour
                 customer.GetComponent<Customer>().InitOrder(orderList);
                 seat.Object = customer;
                 break;
+        }
+    }
+
+    public void GetAllCoin() // 받지 않은 돈을 받음
+    {
+        for(int i=0;i<holders.Length;i++) // 자리를 돌면서
+        {
+            if(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag) // 돈을 받지 않은 손님이 있으면
+            {
+                holders[i].Object.transform.Find("CoinImage").GetComponent<CoinView>().AddCoin(); // 돈 받기
+            }
         }
     }
 }

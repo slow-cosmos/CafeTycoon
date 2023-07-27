@@ -15,21 +15,16 @@ public class Score : MonoBehaviour
         }
     }
 
+    [SerializeField] private int curScore;
+    public int CurScore => curScore;
+
+    [SerializeField] private int curStar;
+    public int CurStar => curStar;
+
     [SerializeField] private Image gauge;
     [SerializeField] private TMP_Text scoreText;
-
-    [SerializeField] private int curScore;
-    public int CurScore
-    {
-        get
-        {
-            return curScore;
-        }
-    }
-
-    [SerializeField] private int star1Score;
-    [SerializeField] private int star2Score;
-    [SerializeField] private int star3Score;
+    [SerializeField] private List<Image> starImage;
+    [SerializeField] private Sprite fillStar;
 
     private void Awake()
     {
@@ -39,20 +34,38 @@ public class Score : MonoBehaviour
         }
 
         curScore = 0;
+        ViewScore();
 
-        scoreText.text = "0";
-        gauge.fillAmount = 0;
+        curStar = 0;
+        for(int i=0;i<3;i++) // 별 위치 초기화
+        {
+            starImage[i].rectTransform.anchoredPosition = new Vector3((float)ChapterManager.Instance.chapterData.StarScore[i] / (float)ChapterManager.Instance.chapterData.StarScore[2] * gauge.rectTransform.rect.width, 3, 0);
+        }
+    }
 
-        star1Score = ChapterManager.Instance.chapterData.Star1Score;
-        star2Score = ChapterManager.Instance.chapterData.Star2Score;
-        star3Score = ChapterManager.Instance.chapterData.Star3Score;
+    private void ViewStar() // 별 오브젝트
+    {
+        for(int i=curStar;i<3;i++)
+        {
+            if(curScore >= ChapterManager.Instance.chapterData.StarScore[i])
+            {
+                starImage[i].sprite = fillStar;
+                curStar++;
+            }
+        }
+    }
+
+    private void ViewScore() // 점수 텍스트, 게이지 
+    {
+        scoreText.text = curScore.ToString();
+        gauge.fillAmount = curScore >= ChapterManager.Instance.chapterData.StarScore[2] ? 1 : (float)curScore / (float)ChapterManager.Instance.chapterData.StarScore[2];
     }
 
     public void AddScore(int coin)
     {
         curScore += coin;
 
-        scoreText.text = curScore.ToString();
-        gauge.fillAmount = curScore >= star3Score ? 1 : (float)curScore / (float)star3Score;
-    }
+        ViewScore();
+        ViewStar();
+    }   
 }

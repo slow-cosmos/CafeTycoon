@@ -7,9 +7,12 @@ public class PopupManager : MonoBehaviour
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject customerQueue;
+    [SerializeField] private GameObject pause;
 
     [SerializeField] private GameObject goalPopup;
     [SerializeField] private GameObject endPopup;
+    [SerializeField] private GameObject pausePopup;
+    [SerializeField] private GameObject timeOver;
 
     public IEnumerator GoalPopup()
     {
@@ -21,16 +24,23 @@ public class PopupManager : MonoBehaviour
         timer.SetActive(true);
         score.SetActive(true);
         customerQueue.SetActive(true);
+        pause.SetActive(true);
     }
 
     public void PausePopup()
     {
-        
+        pausePopup.SetActive(true);
     }
 
     public void EndPopup()
     {
-        //타임오버
         endPopup.SetActive(true);
+    }
+
+    public IEnumerator TimeOver()
+    {
+        timeOver.SetActive(true);
+        yield return new WaitForSeconds(3);
+        timeOver.SetActive(false);
     }
 }

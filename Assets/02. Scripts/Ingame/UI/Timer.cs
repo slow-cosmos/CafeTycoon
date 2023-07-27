@@ -6,21 +6,24 @@ using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public delegate void EndGame();
+    public delegate IEnumerator EndGame();
     public EndGame endGame;
 
     [SerializeField] private TMP_Text text;
 
     [SerializeField] private float time;
     [SerializeField] private float curTime;
+    [SerializeField] private bool isEnd;
+    public bool IsEnd => isEnd;
 
-    int minute;
-    int second;
+    private int minute;
+    private int second;
 
     private void Awake()
     {
         time = ChapterManager.Instance.chapterData.Timer;
         curTime = time;
+        isEnd = false;
     }
 
     private void OnEnable()
@@ -40,9 +43,9 @@ public class Timer : MonoBehaviour
 
             if(curTime <= 0)
             {
-                Debug.Log("시간 종료");
-                endGame();
                 curTime = 0;
+                isEnd = true;
+                StartCoroutine(endGame());
                 yield break;
             }
         }

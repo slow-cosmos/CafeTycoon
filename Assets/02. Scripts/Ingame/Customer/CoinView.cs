@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 
-public class CoinUI : MonoBehaviour, IPointerClickHandler
+public class CoinView : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private Coin coin;
 
@@ -13,6 +13,11 @@ public class CoinUI : MonoBehaviour, IPointerClickHandler
     [SerializeField] private Image coinImage;
     
     public void OnPointerClick(PointerEventData eventData)
+    {
+        AddCoin();
+    }
+
+    public void AddCoin()
     {
         Score.Instance.AddScore(coin.Cost);
         StartCoroutine(CoinText());

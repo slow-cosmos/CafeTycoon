@@ -335,7 +335,7 @@ TextureImporter:
         width: 91
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -356,7 +356,7 @@ TextureImporter:
         width: 91
         height: 15
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -364,6 +364,69 @@ TextureImporter:
       bones: []
       spriteID: 06980feb17340f54b9910322ad6eb763
       internalID: 1428000084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 517
+        width: 91
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1746b69ba892a942a6e04bac87cb96f
+      internalID: -1858333182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 125
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e917984b3b15004681722d057a80b99
+      internalID: 886352503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GameUI_Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 125
+        width: 49
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b70b8898bc4be147bde1da58ee063c1
+      internalID: 2013700530
       vertices: []
       indices: 
       edges: []
@@ -384,7 +447,10 @@ TextureImporter:
       GameUI_Atlas_5: 447584291
       GameUI_Atlas_8: 1836385457
       GameUI_Atlas_1: 1555343523
+      GameUI_Atlas_13: 886352503
       GameUI_Atlas_0: 529773292
+      GameUI_Atlas_12: -1858333182
+      GameUI_Atlas_14: 2013700530
       GameUI_Atlas_10: -1403095977
       GameUI_Atlas_7: -199203003
       GameUI_Atlas_6: 465635072
