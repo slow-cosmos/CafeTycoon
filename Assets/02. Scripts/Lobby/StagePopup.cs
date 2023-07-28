@@ -5,9 +5,12 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
-public class StageManager : MonoBehaviour
+public class StagePopup : MonoBehaviour
 {
+    [SerializeField] private GameObject upgradePopup;
+
     [SerializeField] private GameObject stageObject;
+    [SerializeField] private GameObject parent;
 
     [SerializeField] private int maxStage;
 
@@ -17,7 +20,7 @@ public class StageManager : MonoBehaviour
 
         for(int i=1;i<=maxStage;i++)
         {
-            GameObject stage = Instantiate(stageObject, gameObject.transform);
+            GameObject stage = Instantiate(stageObject, parent.transform);
             stage.transform.GetChild(0).GetComponent<TMP_Text>().text = i.ToString();
 
             int tmp = i;
@@ -29,5 +32,10 @@ public class StageManager : MonoBehaviour
     {
         ChapterManager.Instance.CurChapter = stageNum;
         SceneManager.LoadScene("Ingame");
+    }
+
+    public void UpgradeButton()
+    {
+        upgradePopup.SetActive(true);
     }
 }

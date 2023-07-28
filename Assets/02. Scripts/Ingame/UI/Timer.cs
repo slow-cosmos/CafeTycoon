@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
         StartCoroutine(StartTimer());
     }
 
-    IEnumerator StartTimer()
+    private IEnumerator StartTimer()
     {
         while(curTime > 0)
         {

@@ -36,12 +36,10 @@ public class Customer : MonoBehaviour
         {
             if(timer.isEnd)
             {
-                endFlag = true;
                 StartCoroutine(FailOrder());
             }
             else if(orderCount == 0)
             {
-                endFlag = true;
                 StartCoroutine(SuccessOrder());
             }
         }
@@ -93,6 +91,8 @@ public class Customer : MonoBehaviour
 
     IEnumerator SuccessOrder()
     {
+        endFlag = true;
+        
         orderObject.SetActive(false);
         timerObject.SetActive(false);
 
@@ -102,8 +102,10 @@ public class Customer : MonoBehaviour
         coinObject.SetActive(true);
     }
 
-    IEnumerator FailOrder()
+    public IEnumerator FailOrder()
     {
+        endFlag = true;
+
         orderObject.SetActive(false);
         timerObject.SetActive(false);
 

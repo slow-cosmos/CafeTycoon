@@ -1,15 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class CustomerQueue : MonoBehaviour
 {
+    public delegate IEnumerator EndGame();
+    public EndGame endGame;
+
     public GameObject normalCustomer;
 
-    public Holder[] holders = new Holder[4]; // 손님 좌석
+    [SerializeField] private Holder[] holders = new Holder[4]; // 손님 좌석
 
     [SerializeField] private float timeGap;
     [SerializeField] private float curTime;
+
+    [SerializeField] private Image gauge;
+    [SerializeField] private TMP_Text queueText;
 
     private void Awake()
     {
@@ -29,18 +37,18 @@ public class CustomerQueue : MonoBehaviour
             while(curTime > 0)
             {
                 curTime -= Time.deltaTime;
+                gauge.fillAmount = (timeGap - curTime) / timeGap;
+                queueText.text = $"{i+1} / {ChapterManager.Instance.customerQueueData.CustomerList.Count}";
                 yield return null;
             }
             curTime = timeGap;
-            // 기다렸다가 들어오는 손님 기다렸다가 들어오도록 수정
 
-            WaitForSeconds checkTime = new WaitForSeconds(0.1f);
             while(true)
             {
                 Holder seat = GetEmptySeat();
                 if(GetEmptySeat() == null)
                 {
-                    yield return checkTime;
+                    yield return null;
                 }
                 else
                 {
@@ -51,6 +59,7 @@ public class CustomerQueue : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(WaitForEndCustomerQueue());
     }
 
     private Holder GetEmptySeat() // 빈자리 찾기
@@ -71,15 +80,41 @@ public class CustomerQueue : MonoBehaviour
         {
             case CustomerType.Normal:
                 GameObject customer = Instantiate(normalCustomer, seat.gameObject.transform);
-                customer.GetComponent<Customer>().InitOrder(orderList);
                 seat.Object = customer;
+                customer.GetComponent<Customer>().InitOrder(orderList);
                 break;
         }
     }
 
-    public void GetAllCoin() // 받지 않은 돈을 받음
+    private IEnumerator WaitForEndCustomerQueue() // 손님이 모두 나갈 때까지 대기
     {
-        for(int i=0;i<holders.Length;i++) // 자리를 돌면서
+        for(int i=0;i<4;i++)
+        {
+            while(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag == false)
+            {
+                Debug.Log(i+" 손님 나갈 때까지 대기");
+                yield return null;
+            }
+        }
+        Debug.Log("모두 나감");
+        StartCoroutine(endGame());
+    }
+
+    public void ComeOutCustomer()
+    {
+        for(int i=0;i<4;i++)
+        {
+            if(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag == false)
+            {
+                Customer customer = holders[i].Object.GetComponent<Customer>();
+                customer.StartCoroutine(customer.FailOrder());
+            }
+        }
+    }
+
+    public void GetAllCoin() // 끝날 때 받지 않은 돈을 받음
+    {
+        for(int i=0;i<4;i++) // 자리를 돌면서
         {
             if(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag) // 돈을 받지 않은 손님이 있으면
             {

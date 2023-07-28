@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         timer.endGame += EndGame;
+        customerQueue.endGame += EndGame;
     }
 
     private void Start()
@@ -40,7 +41,7 @@ public class GameManager : MonoBehaviour
             gameState = GameState.End;
             if(timer.IsEnd) // 타이머가 끝났다면
             {
-                // 손님큐 안보이게
+                customerQueue.ComeOutCustomer();
                 popupManager.StartCoroutine(popupManager.TimeOver());
                 yield return new WaitForSeconds(3);
                 customerQueue.GetAllCoin();
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
             }
             else // 손님이 더 없어서 끝났다면
             {
+                yield return new WaitForSeconds(1.5f);
                 customerQueue.GetAllCoin();
                 yield return new WaitForSeconds(1);
                 // 남은 시간을 점수에 추가

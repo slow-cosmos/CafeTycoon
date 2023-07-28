@@ -7,6 +7,7 @@ public class PopupManager : MonoBehaviour
     [SerializeField] private GameObject timer;
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject customerQueue;
+    [SerializeField] private GameObject customerQueueUI;
     [SerializeField] private GameObject pause;
 
     [SerializeField] private GameObject goalPopup;
@@ -24,6 +25,7 @@ public class PopupManager : MonoBehaviour
         timer.SetActive(true);
         score.SetActive(true);
         customerQueue.SetActive(true);
+        customerQueueUI.SetActive(true);
         pause.SetActive(true);
     }
 
