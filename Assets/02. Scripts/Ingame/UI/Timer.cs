@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
 
 public class Timer : MonoBehaviour
 {
-    public delegate IEnumerator EndGame();
+    public delegate UniTask EndGame();
     public EndGame endGame;
 
     [SerializeField] private TMP_Text text;
@@ -45,7 +46,7 @@ public class Timer : MonoBehaviour
             {
                 curTime = 0;
                 isEnd = true;
-                StartCoroutine(endGame());
+                endGame();
                 yield break;
             }
         }

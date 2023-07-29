@@ -18,7 +18,7 @@ public class HolderManager : MonoBehaviour
 
     void Init()
     {
-        holderCount = 2; // 업그레이드 정보로 바꾸기
+        holderCount = UpgradeManager.Instance.GetUpgradeInfo(4);
         spriteRenderer.sprite = sprites[holderCount-1];
         for(int i=holderCount;i<holders.Count;i++)
         {

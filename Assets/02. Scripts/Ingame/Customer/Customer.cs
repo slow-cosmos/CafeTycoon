@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 
 public enum CustomerType
@@ -22,25 +23,25 @@ public class Customer : MonoBehaviour
 
     [SerializeField] private Dialog dialog;
 
-    private bool endFlag = false;
+    [SerializeField] private bool endFlag = false;
     public bool EndFlag => endFlag;
 
     private void Awake()
     {
-        timer.InitTimeSpeed(1); // 노멀 손님
+        timer.InitTimeSpeed(0.7f); // 노멀 손님
     }
 
-    private void Update()
+    private async void Update()
     {
         if(!endFlag)
         {
             if(timer.isEnd)
             {
-                StartCoroutine(FailOrder());
+                FailOrder().Forget();
             }
             else if(orderCount == 0)
             {
-                StartCoroutine(SuccessOrder());
+                SuccessOrder().Forget();
             }
         }
     }
@@ -73,44 +74,41 @@ public class Customer : MonoBehaviour
                 }
             }
         }
-        StartCoroutine(WarningOrder());
+        WarningOrder().Forget();
         return false;
     }
 
-    IEnumerator WarningOrder()
+    private async UniTask WarningOrder()
     {
         orderObject.SetActive(false);
         timerObject.SetActive(false);
 
-        dialog.StartCoroutine(dialog.ChangeDialog(DialogType.Warning));
-        yield return new WaitForSeconds(1);
+        await dialog.ChangeDialog(DialogType.Warning);
 
         orderObject.SetActive(true);
         timerObject.SetActive(true);
     }
 
-    IEnumerator SuccessOrder()
+    private async UniTask SuccessOrder()
     {
         endFlag = true;
         
         orderObject.SetActive(false);
         timerObject.SetActive(false);
 
-        dialog.StartCoroutine(dialog.ChangeDialog(DialogType.Success));
-        yield return new WaitForSeconds(1);
+        await dialog.ChangeDialog(DialogType.Success);
 
         coinObject.SetActive(true);
     }
 
-    public IEnumerator FailOrder()
+    public async UniTask FailOrder()
     {
         endFlag = true;
 
         orderObject.SetActive(false);
         timerObject.SetActive(false);
 
-        dialog.StartCoroutine(dialog.ChangeDialog(DialogType.Fail));
-        yield return new WaitForSeconds(1);
+        await dialog.ChangeDialog(DialogType.Fail);
 
         if(coin.Cost == 0)
         {

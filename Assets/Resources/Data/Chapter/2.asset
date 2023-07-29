@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6914762be49276048b488a28e5e1a310, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  timer: 15
+  timer: 40
   timeGap: 3
   starScore: 1e0000002800000032000000

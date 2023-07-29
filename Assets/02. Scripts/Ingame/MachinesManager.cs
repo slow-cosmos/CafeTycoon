@@ -11,11 +11,10 @@ public class MachinesManager : MonoBehaviour
 
     void Start()
     {
-        //챕터 정보에서 받아오기
-        coffeeMachines.Init(2);
-        steamMachines.Init(1);
-        ovens.Init(1);
-        mixer.Init(2);
+        coffeeMachines.Init(UpgradeManager.Instance.GetUpgradeInfo(0));
+        steamMachines.Init(UpgradeManager.Instance.GetUpgradeInfo(1));
+        ovens.Init(UpgradeManager.Instance.GetUpgradeInfo(2));
+        mixer.Init(UpgradeManager.Instance.GetUpgradeInfo(3));
     }
 
 }

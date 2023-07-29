@@ -12,8 +12,7 @@ public class Milk : Recipe
 
     public override void InitCost()
     {
-        // 업그레이드 정보에 맞춰 가격 초기화
-        cost = 5;
+        cost = UpgradeManager.Instance.GetUpgradeInfo(10);
     }
 
     public override void OnMouseUp()

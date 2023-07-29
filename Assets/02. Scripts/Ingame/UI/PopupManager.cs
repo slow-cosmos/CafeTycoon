@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public class PopupManager : MonoBehaviour
 {
@@ -39,10 +40,10 @@ public class PopupManager : MonoBehaviour
         endPopup.SetActive(true);
     }
 
-    public IEnumerator TimeOver()
+    public async UniTask TimeOver()
     {
         timeOver.SetActive(true);
-        yield return new WaitForSeconds(3);
+        await UniTask.Delay(3000);
         timeOver.SetActive(false);
     }
 }

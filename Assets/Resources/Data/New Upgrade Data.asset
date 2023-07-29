@@ -13,15 +13,71 @@ MonoBehaviour:
   m_Name: New Upgrade Data
   m_EditorClassIdentifier: 
   upgradeList:
-  - name: test1
-    sprite: {fileID: 0}
+  - name: "\uC5D0\uC2A4\uD504\uB808\uC18C \uBA38\uC2E0"
+    sprite: {fileID: 21300000, guid: 637a800c3e9fe93458ef5b6269509688, type: 3}
+    upgradeType: 1
+    upgrade: 010000000200000003000000
+  - name: "\uC6B0\uC720 \uC2A4\uD300\uAE30"
+    sprite: {fileID: 21300000, guid: 130817c08a6dfcd46ae25ae5440dcc06, type: 3}
+    upgradeType: 1
+    upgrade: 0100000002000000
+  - name: "\uC624\uBE10"
+    sprite: {fileID: 21300000, guid: 8db3ef403e49e124aa22ddaaf9f90b87, type: 3}
+    upgradeType: 1
+    upgrade: 0100000002000000
+  - name: "\uACFC\uC77C \uBBF9\uC11C"
+    sprite: {fileID: 21300000, guid: ecaebab4bdef5e2498f81d9f63ce5dd7, type: 3}
+    upgradeType: 1
+    upgrade: 010000000200000003000000
+  - name: "\uCEE4\uD53C \uC7C1\uBC18"
+    sprite: {fileID: 21300000, guid: 1a4f1454d3770c749b26607b9737ff73, type: 3}
+    upgradeType: 1
+    upgrade: 01000000020000000300000004000000
+  - name: "\uC5D0\uC2A4\uD504\uB808\uC18C \uBA38\uC2E0"
+    sprite: {fileID: 21300000, guid: ccf542ba8094a2d40837535c8714fb21, type: 3}
     upgradeType: 0
-    upgrade: 0a000000140000001e000000
-  - name: test2
-    sprite: {fileID: 0}
+    upgrade: 0b0000000900000007000000
+  - name: "\uC624\uBE10"
+    sprite: {fileID: 21300000, guid: 8db3ef403e49e124aa22ddaaf9f90b87, type: 3}
     upgradeType: 0
-    upgrade: 140000001e000000
-  - name: test3
-    sprite: {fileID: 0}
+    upgrade: 0e0000000b00000008000000
+  - name: "\uACFC\uC77C \uBBF9\uC11C"
+    sprite: {fileID: 21300000, guid: ecaebab4bdef5e2498f81d9f63ce5dd7, type: 3}
     upgradeType: 0
-    upgrade: 28000000320000003c000000
+    upgrade: 110000000e0000000b000000
+  - name: "\uCEE4\uD53C \uC6D0\uB450"
+    sprite: {fileID: 21300000, guid: 982c94a1ea82a8c469bd20c3975d5cd2, type: 3}
+    upgradeType: 2
+    upgrade: 1e00000028000000320000003c000000
+  - name: "\uBB3C"
+    sprite: {fileID: 21300000, guid: 650e37d35119b4e42bcc4ea59b5d954a, type: 3}
+    upgradeType: 2
+    upgrade: 0f00000014000000190000001e000000
+  - name: "\uC6B0\uC720"
+    sprite: {fileID: 21300000, guid: f5d6cd43f97c91b429c02113371e09f5, type: 3}
+    upgradeType: 2
+    upgrade: 19000000230000002d00000037000000
+  - name: "\uC5BC\uC74C"
+    sprite: {fileID: 21300000, guid: 3b137289b87554446963874b0d2bc332, type: 3}
+    upgradeType: 2
+    upgrade: 140000001e0000002800000032000000
+  - name: "\uD718\uD551 \uD06C\uB9BC"
+    sprite: {fileID: 21300000, guid: b2fb971171655524f90440105d6f6550, type: 3}
+    upgradeType: 2
+    upgrade: 140000001e0000002800000032000000
+  - name: "\uADF8\uB9B0\uD2F0 \uD30C\uC6B0\uB354"
+    sprite: {fileID: 21300000, guid: af1787f9d85fb8241a3adc39ff0a077d, type: 3}
+    upgradeType: 2
+    upgrade: 230000002d0000003700000041000000
+  - name: "\uBC18\uC8FD \uCFE0\uD0A4"
+    sprite: {fileID: 21300000, guid: 75e6c750d37ea7f4ea187d7d0e8354e1, type: 3}
+    upgradeType: 2
+    upgrade: 2d0000003c0000004b0000005a000000
+  - name: "\uBC18\uC8FD \uBCA0\uC774\uAE00"
+    sprite: {fileID: 21300000, guid: 81e75d37b0ed4c14cbabe4b410a0db39, type: 3}
+    upgradeType: 2
+    upgrade: 37000000460000005500000064000000
+  - name: "\uC0DD\uACFC\uC77C"
+    sprite: {fileID: 21300000, guid: 295780fa30cabeb44a20da89f1faaf93, type: 3}
+    upgradeType: 2
+    upgrade: 28000000320000003c00000046000000

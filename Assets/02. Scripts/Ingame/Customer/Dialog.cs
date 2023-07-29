@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
 
@@ -20,7 +21,7 @@ public class Dialog : MonoBehaviour
     public Sprite[] sprites = new Sprite[3];
     public string[] strings = new string[3];
 
-    public IEnumerator ChangeDialog(DialogType dialog)
+    public async UniTask ChangeDialog(DialogType dialog)
     {
         int idx = (int)dialog;
 
@@ -32,7 +33,7 @@ public class Dialog : MonoBehaviour
 
         imageTransform.sizeDelta = sprites[idx].bounds.size*100;
 
-        yield return new WaitForSeconds(1);
+        await UniTask.Delay(1000);
 
         image.gameObject.SetActive(false);
         text.gameObject.SetActive(false);

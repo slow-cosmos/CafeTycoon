@@ -14,7 +14,7 @@ public class Oven : MonoBehaviour, IMakeMenuObject
 
     private void Awake()
     {
-        timer = 3.0f; // 임시 타이머
+        timer = UpgradeManager.Instance.GetUpgradeInfo(6);
         burnedTime = 3.0f;
     }
 

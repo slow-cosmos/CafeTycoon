@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 
 public enum GameState
 {
@@ -34,26 +35,23 @@ public class GameManager : MonoBehaviour
         popupManager.StartCoroutine(popupManager.GoalPopup());
     }
 
-    private IEnumerator EndGame()
+    private async UniTask EndGame()
     {
         if(gameState != GameState.End) // 게임모드가 End가 아니면 (중복 방지)
         {
             gameState = GameState.End;
             if(timer.IsEnd) // 타이머가 끝났다면
             {
-                customerQueue.ComeOutCustomer();
-                popupManager.StartCoroutine(popupManager.TimeOver());
-                yield return new WaitForSeconds(3);
-                customerQueue.GetAllCoin();
-                yield return new WaitForSeconds(1);
+                Debug.Log("타이머 끝!");
+                await customerQueue.EndCustomerQueue();
+                await popupManager.TimeOver();
             }
-            else // 손님이 더 없어서 끝났다면
+            else
             {
-                yield return new WaitForSeconds(1.5f);
-                customerQueue.GetAllCoin();
-                yield return new WaitForSeconds(1);
-                // 남은 시간을 점수에 추가
+                Debug.Log("손님 끝!");
+                await UniTask.Delay(3000);
             }
+            await customerQueue.GetAllCoin();
             popupManager.EndPopup();
         }
     }

@@ -51,4 +51,9 @@ public class UpgradeManager : MonoBehaviour
             curUpgrades.Add(PlayerPrefs.GetInt("CurUpgrade"+i, 0));
         }
     }
+
+    public int GetUpgradeInfo(int idx)
+    {
+        return upgradeData.upgradeList[idx].upgrade[curUpgrades[idx]];
+    }
 }

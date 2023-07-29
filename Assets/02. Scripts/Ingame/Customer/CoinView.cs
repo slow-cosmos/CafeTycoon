@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
@@ -17,18 +18,16 @@ public class CoinView : MonoBehaviour, IPointerClickHandler
         AddCoin();
     }
 
-    public void AddCoin()
+    public async UniTask AddCoin()
     {
         Score.Instance.AddScore(coin.Cost);
-        StartCoroutine(CoinText());
-    }
 
-    IEnumerator CoinText()
-    {
         coinImage.enabled = false;
         coinText.SetActive(true);
         coinText.GetComponent<TMP_Text>().text = "+"+coin.Cost;
-        yield return new WaitForSeconds(1);
+
+        await UniTask.Delay(1000);
+        
         Destroy(transform.parent.gameObject);
     }
 }

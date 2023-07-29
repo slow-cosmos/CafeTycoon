@@ -21,8 +21,7 @@ public class Juice : MonoBehaviour, ICostInit
 
     public void InitCost()
     {
-        // 업그레이드 정보에 맞춰 가격 초기화
-        cost = 5;
+        cost = UpgradeManager.Instance.GetUpgradeInfo(16);
     }
 
     public void OnMouseDrag()

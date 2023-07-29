@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using UnityEngine.UI;
 using TMPro;
 
 public class CustomerQueue : MonoBehaviour
 {
-    public delegate IEnumerator EndGame();
+    public delegate UniTask EndGame();
     public EndGame endGame;
 
     public GameObject normalCustomer;
@@ -19,6 +20,8 @@ public class CustomerQueue : MonoBehaviour
     [SerializeField] private Image gauge;
     [SerializeField] private TMP_Text queueText;
 
+    private Coroutine coroutine;
+
     private void Awake()
     {
         timeGap = ChapterManager.Instance.chapterData.TimeGap;
@@ -27,10 +30,10 @@ public class CustomerQueue : MonoBehaviour
     
     private void OnEnable()
     {
-        StartCoroutine(CustomerQueueStart());
+        coroutine = StartCoroutine(StartCustomerQueue());
     }
 
-    private IEnumerator CustomerQueueStart()
+    private IEnumerator StartCustomerQueue()
     {
         for(int i=0;i<ChapterManager.Instance.customerQueueData.CustomerList.Count;i++)
         {
@@ -92,33 +95,41 @@ public class CustomerQueue : MonoBehaviour
         {
             while(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag == false)
             {
-                Debug.Log(i+" 손님 나갈 때까지 대기");
+                // Debug.Log(i+" 손님 나갈 때까지 대기");
                 yield return null;
             }
         }
         Debug.Log("모두 나감");
-        StartCoroutine(endGame());
+        yield return new WaitForSeconds(1);
+
+        endGame().Forget();
     }
 
-    public void ComeOutCustomer()
+    private async UniTask ComeOutCustomer() // 손님 내보내기
     {
         for(int i=0;i<4;i++)
         {
             if(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag == false)
             {
                 Customer customer = holders[i].Object.GetComponent<Customer>();
-                customer.StartCoroutine(customer.FailOrder());
+                customer.FailOrder().Forget();
             }
         }
     }
 
-    public void GetAllCoin() // 끝날 때 받지 않은 돈을 받음
+    public async UniTask EndCustomerQueue()
+    {
+        StopCoroutine(coroutine); // 손님큐 멈추기
+        await ComeOutCustomer();
+    }
+
+    public async UniTask GetAllCoin() // 끝날 때 받지 않은 돈을 받음
     {
         for(int i=0;i<4;i++) // 자리를 돌면서
         {
             if(holders[i].Object != null && holders[i].Object.GetComponent<Customer>().EndFlag) // 돈을 받지 않은 손님이 있으면
             {
-                holders[i].Object.transform.Find("CoinImage").GetComponent<CoinView>().AddCoin(); // 돈 받기
+                await holders[i].Object.transform.Find("CoinImage").GetComponent<CoinView>().AddCoin(); // 돈 받기
             }
         }
     }
