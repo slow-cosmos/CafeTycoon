@@ -15,7 +15,7 @@ public class Ice : Recipe
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(11);
+        cost = UpgradeManager.Instance.GetUpgrade("Ice:Cost");
     }
 
     public void OnMouseDrag()

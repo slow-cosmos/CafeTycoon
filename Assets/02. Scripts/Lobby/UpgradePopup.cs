@@ -15,27 +15,26 @@ public class UpgradePopup : MonoBehaviour
 
     private void Init()
     {
-        for(int i=0;i<UpgradeManager.Instance.upgradeData.upgradeList.Count;i++)
+        for(int i=0;i<UpgradeManager.Instance.GetUpgradeListCount();i++)
         {
-            int tmp = i;
-            UpgradeInfo upgradeInfo = UpgradeManager.Instance.upgradeData.upgradeList[i];
-
             GameObject obj = Instantiate(upgradeObject, parent.transform);
-            obj.transform.Find("Upgrade").GetComponent<Button>().onClick.AddListener(() => UpgradeButton(tmp));
-            obj.transform.Find("Downgrade").GetComponent<Button>().onClick.AddListener(() => DowngradeButton(tmp));
-            obj.GetComponent<Upgrade>().Init(i);
+
+            string key = UpgradeManager.Instance.GetCurUpgradeKey(i);
+            int idx = i;
+            obj.transform.Find("Upgrade").GetComponent<Button>().onClick.AddListener(() => UpgradeButton(idx, key));
+            obj.transform.Find("Downgrade").GetComponent<Button>().onClick.AddListener(() => DowngradeButton(idx, key));
+            obj.GetComponent<Upgrade>().Init(key);
         }
     }
 
-    public void UpgradeButton(int curIdx)
+    public void UpgradeButton(int idx, string key)
     {
-        if(UpgradeManager.Instance.curUpgrades[curIdx]+1 < UpgradeManager.Instance.upgradeData.upgradeList[curIdx].upgrade.Count)
+        int value = UpgradeManager.Instance.GetCurUpgradeValue(key)+1;
+        if(value < UpgradeManager.Instance.GetUpgradeInfo(key).upgrade.Count)
         {
-            UpgradeManager.Instance.curUpgrades[curIdx] += 1;
-            
-            int curUpgrade = UpgradeManager.Instance.curUpgrades[curIdx];
-            PlayerPrefs.SetInt("CurUpgrade"+curIdx, curUpgrade);
-            parent.transform.GetChild(curIdx).GetComponent<Upgrade>().View(curIdx);
+            UpgradeManager.Instance.SetCurUpgradeValue(key, value);
+            PlayerPrefs.SetInt(key, value);
+            parent.transform.GetChild(idx).GetComponent<Upgrade>().View(key);
         }
         else
         {
@@ -43,15 +42,14 @@ public class UpgradePopup : MonoBehaviour
         }
     }
 
-    public void DowngradeButton(int curIdx)
+    public void DowngradeButton(int idx, string key)
     {
-        if(UpgradeManager.Instance.curUpgrades[curIdx] > 0)
+        int value = UpgradeManager.Instance.GetCurUpgradeValue(key)-1;
+        if(value >= 0)
         {
-            UpgradeManager.Instance.curUpgrades[curIdx] -= 1;
-            
-            int curUpgrade = UpgradeManager.Instance.curUpgrades[curIdx];
-            PlayerPrefs.SetInt("CurUpgrade"+curIdx, curUpgrade);
-            parent.transform.GetChild(curIdx).GetComponent<Upgrade>().View(curIdx);
+            UpgradeManager.Instance.SetCurUpgradeValue(key, value);
+            PlayerPrefs.SetInt(key, value);
+            parent.transform.GetChild(idx).GetComponent<Upgrade>().View(key);
         }
         else
         {

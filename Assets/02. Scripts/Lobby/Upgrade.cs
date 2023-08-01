@@ -8,19 +8,38 @@ public class Upgrade : MonoBehaviour
 {
     [SerializeField] private TMP_Text name;
     [SerializeField] private Image image;
-    [SerializeField] private TMP_Text detail;
+    [SerializeField] private TMP_Text current;
+    [SerializeField] private TMP_Text next;
+    [SerializeField] private TMP_Text type;
 
-    public void Init(int curIdx)
+    private UpgradeInfo upgradeInfo;
+
+    public void Init(string key)
     {
-        UpgradeInfo upgradeInfo = UpgradeManager.Instance.upgradeData.upgradeList[curIdx];
+        upgradeInfo = UpgradeManager.Instance.GetUpgradeInfo(key);
         name.text = upgradeInfo.name;
         image.sprite = upgradeInfo.sprite;
-        detail.text = upgradeInfo.upgrade[UpgradeManager.Instance.curUpgrades[curIdx]].ToString();
+
+        switch(upgradeInfo.upgradeType)
+        {
+            case UpgradeType.Count:
+                type.text = "생산(보관)수량증가";
+                break;
+            case UpgradeType.Time:
+                type.text = "작업시간단축(초)";
+                break;
+            case UpgradeType.Cost:
+                type.text = "판매가격상승";
+                break;
+        }
+
+        View(key);
     }
 
-    public void View(int curIdx)
+    public void View(string key)
     {
-        UpgradeInfo upgradeInfo = UpgradeManager.Instance.upgradeData.upgradeList[curIdx];
-        detail.text = upgradeInfo.upgrade[UpgradeManager.Instance.curUpgrades[curIdx]].ToString();
+        int curUpgrade = UpgradeManager.Instance.GetCurUpgradeValue(key);
+        current.text = upgradeInfo.upgrade[curUpgrade].ToString();
+        next.text = curUpgrade+1 == upgradeInfo.upgrade.Count ? upgradeInfo.upgrade[curUpgrade].ToString() : upgradeInfo.upgrade[curUpgrade+1].ToString();
     }
 }

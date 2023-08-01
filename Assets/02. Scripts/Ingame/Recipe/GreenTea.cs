@@ -12,7 +12,7 @@ public class GreenTea : Recipe
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(13);
+        cost = UpgradeManager.Instance.GetUpgrade("GreenTea:Cost");
     }
 
     public override void OnMouseUp()

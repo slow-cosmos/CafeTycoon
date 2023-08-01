@@ -12,7 +12,7 @@ public class Cream : Recipe
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(12);
+        cost = UpgradeManager.Instance.GetUpgrade("Cream:Cost");
     }
 
     public override void OnMouseUp()

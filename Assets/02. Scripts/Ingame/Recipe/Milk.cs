@@ -12,7 +12,7 @@ public class Milk : Recipe
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(10);
+        cost = UpgradeManager.Instance.GetUpgrade("Milk:Cost");
     }
 
     public override void OnMouseUp()

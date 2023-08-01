@@ -21,7 +21,7 @@ public class Juice : MonoBehaviour, ICostInit
 
     public void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(16);
+        cost = UpgradeManager.Instance.GetUpgrade("Juice:Cost");
     }
 
     public void OnMouseDrag()

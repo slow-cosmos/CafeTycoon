@@ -12,7 +12,7 @@ public class Espresso : Recipe
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(8);
+        cost = UpgradeManager.Instance.GetUpgrade("Espresso:Cost");
     }
 
     public override void OnMouseUp()

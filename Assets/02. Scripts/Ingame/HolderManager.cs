@@ -18,7 +18,7 @@ public class HolderManager : MonoBehaviour
 
     void Init()
     {
-        holderCount = UpgradeManager.Instance.GetUpgradeInfo(4);
+        holderCount = UpgradeManager.Instance.GetUpgrade("Tray:Count");
         spriteRenderer.sprite = sprites[holderCount-1];
         for(int i=holderCount;i<holders.Count;i++)
         {

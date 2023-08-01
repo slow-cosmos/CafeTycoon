@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: fc3a3310e34158040a49e4dc664cecef
+guid: 3d51fdeedc5170c49a4b2822a5399601
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,49 +115,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: UpgradePopupUI_Atlas_0
-      rect:
-        serializedVersion: 2
-        x: 862
-        y: 219
-        width: 78
-        height: 67
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 29, y: 34, z: 29, w: 33}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 909edcc1fe1571d42ad1d133d4bbefff
-      internalID: 1614540923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: UpgradePopupUI_Atlas_1
-      rect:
-        serializedVersion: 2
-        x: 501
-        y: 449
-        width: 31
-        height: 37
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c133df49b8e47144eb8f488889031d6e
-      internalID: 1094365401
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -168,9 +126,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      UpgradePopupUI_Atlas_0: 1614540923
-      UpgradePopupUI_Atlas_1: 1094365401
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

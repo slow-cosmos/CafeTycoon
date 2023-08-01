@@ -15,6 +15,6 @@ public class Doughnut : DoughMenu
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(15);
+        cost = UpgradeManager.Instance.GetUpgrade("Doughnut:Cost");
     }
 }

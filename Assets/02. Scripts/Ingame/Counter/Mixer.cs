@@ -14,7 +14,7 @@ public class Mixer : MonoBehaviour, IMakeMenu
     private void Awake()
     {
         machines = gameObject.GetComponent<Machines>();
-        timer = UpgradeManager.Instance.GetUpgradeInfo(7);
+        timer = UpgradeManager.Instance.GetUpgrade("Mixer:Time");
     }
     
     private void OnMouseDown()

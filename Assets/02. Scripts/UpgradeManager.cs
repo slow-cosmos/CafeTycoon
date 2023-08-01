@@ -2,12 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum UpgradeType
-{
-    Time,
-    Count,
-    Cost
-}
+[System.Serializable]
+public class UpgradeDictionary : SerializableDictionary<string, int>{} // dictionary 인스펙터 표시
 
 public class UpgradeManager : MonoBehaviour
 {
@@ -42,18 +38,45 @@ public class UpgradeManager : MonoBehaviour
 
     public UpgradeData upgradeData;
 
-    public List<int> curUpgrades = new List<int>();
+    [SerializeField] private UpgradeDictionary curUpgrade = new UpgradeDictionary();
 
-    private void Init()
+    private void Init() // 현재 업그레이드 정보 로드
     {
-        for(int i=0;i<upgradeData.upgradeList.Count;i++)
+        for(int i=0;i<GetUpgradeListCount();i++)
         {
-            curUpgrades.Add(PlayerPrefs.GetInt("CurUpgrade"+i, 0));
+            string key = GetCurUpgradeKey(i);
+            curUpgrade.Add(key,PlayerPrefs.GetInt(key,0));
         }
     }
 
-    public int GetUpgradeInfo(int idx)
+    public int GetUpgradeListCount() // 전체 업그레이드 리스트 개수
     {
-        return upgradeData.upgradeList[idx].upgrade[curUpgrades[idx]];
+        return upgradeData.UpgradeList.Count;
+    }
+
+    public UpgradeInfo GetUpgradeInfo(string key) // 하나 업그레이드 정보
+    {
+        string[] keys = key.Split(':');
+        return upgradeData.UpgradeList.Find(x => x.upgradeObject.ToString() == keys[0] && x.upgradeType.ToString() == keys[1]);
+    }
+
+    public int GetUpgrade(string key)
+    {
+        return GetUpgradeInfo(key).upgrade[GetCurUpgradeValue(key)];
+    }
+
+    public string GetCurUpgradeKey(int idx) // 저장, 로드할 때 필요한 dictionary 키
+    {
+        return $"{upgradeData.UpgradeList[idx].upgradeObject.ToString()}:{upgradeData.UpgradeList[idx].upgradeType.ToString()}";
+    }
+
+    public int GetCurUpgradeValue(string key) // dictionary 값 가져오기
+    {
+        return curUpgrade[key];
+    }
+
+    public void SetCurUpgradeValue(string key, int value) // dictionary 값 변경
+    {
+        curUpgrade[key] = value;
     }
 }

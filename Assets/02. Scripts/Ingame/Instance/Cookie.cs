@@ -15,6 +15,6 @@ public class Cookie : DoughMenu
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(14);
+        cost = UpgradeManager.Instance.GetUpgrade("Cookie:Cost");
     }
 }

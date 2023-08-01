@@ -11,10 +11,10 @@ public class MachinesManager : MonoBehaviour
 
     void Start()
     {
-        coffeeMachines.Init(UpgradeManager.Instance.GetUpgradeInfo(0));
-        steamMachines.Init(UpgradeManager.Instance.GetUpgradeInfo(1));
-        ovens.Init(UpgradeManager.Instance.GetUpgradeInfo(2));
-        mixer.Init(UpgradeManager.Instance.GetUpgradeInfo(3));
+        coffeeMachines.Init(UpgradeManager.Instance.GetUpgrade("EspressoMachine:Count"));
+        steamMachines.Init(UpgradeManager.Instance.GetUpgrade("SteamMachine:Count"));
+        ovens.Init(UpgradeManager.Instance.GetUpgrade("Oven:Count"));
+        mixer.Init(UpgradeManager.Instance.GetUpgrade("Mixer:Count"));
     }
 
 }

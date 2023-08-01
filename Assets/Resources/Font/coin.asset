@@ -20,7 +20,7 @@ Texture2D:
   m_MipsStripped: 0
   m_TextureFormat: 1
   m_MipCount: 1
-  m_IsReadable: 0
+  m_IsReadable: 1
   m_IsPreProcessed: 0
   m_IgnoreMasterTextureLimit: 0
   m_StreamingMipmaps: 0
@@ -59,14 +59,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: coin
   m_EditorClassIdentifier: 
-  hashCode: -1102853699
+  hashCode: 3533451
   material: {fileID: 2084300574001502833}
-  materialHashCode: -1297835395
+  materialHashCode: -999848629
   m_Version: 1.1.0
   m_SourceFontFileGUID: 910ccf4f05c5c95428d323fb82dfca85
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: 910ccf4f05c5c95428d323fb82dfca85, type: 3}
-  m_SourceFontFile: {fileID: 0}
-  m_AtlasPopulationMode: 0
+  m_SourceFontFile: {fileID: 12800000, guid: 910ccf4f05c5c95428d323fb82dfca85, type: 3}
+  m_AtlasPopulationMode: 1
   m_FaceInfo:
     m_FaceIndex: 0
     m_FamilyName: SUITE

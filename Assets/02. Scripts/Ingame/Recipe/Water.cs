@@ -12,7 +12,7 @@ public class Water : Recipe
 
     public override void InitCost()
     {
-        cost = UpgradeManager.Instance.GetUpgradeInfo(9);
+        cost = UpgradeManager.Instance.GetUpgrade("Water:Cost");
     }
 
     public override void OnMouseUp()

@@ -14,7 +14,7 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
     private void Awake()
     {
         machines = gameObject.transform.parent.GetComponent<Machines>();
-        timer = UpgradeManager.Instance.GetUpgradeInfo(5);
+        timer = UpgradeManager.Instance.GetUpgrade("EspressoMachine:Time");
     }
     
     private void OnMouseDown()
