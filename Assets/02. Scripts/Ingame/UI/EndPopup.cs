@@ -21,6 +21,8 @@ public class EndPopup : MonoBehaviour
         {
             starObject[i].SetActive(true);
         }
+
+        SaveManager.Instance.StageClear(ChapterManager.Instance.CurChapter, Score.Instance.CurStar);
     }
 
     public void ExitButton()

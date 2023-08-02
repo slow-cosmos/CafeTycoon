@@ -125,7 +125,7 @@ TextureImporter:
         width: 179
         height: 124
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -133,6 +133,111 @@ TextureImporter:
       bones: []
       spriteID: 99db9c2bde50eac46bf1782df717dfdd
       internalID: -2044070567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CircleStage_Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 313
+        width: 166
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e983d169610533438ed3ef2f6ef4170
+      internalID: 393146110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CircleStage_Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 437
+        width: 166
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83f9e174ef91b0345a13410ee0ce19eb
+      internalID: -596803775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CircleStage_Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 438
+        width: 166
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2487867ad0ff7045b54349f2680f7c3
+      internalID: 1505212402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CircleStage_Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 136
+        width: 179
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc6e4254d1da22d43af2cb7c1c6eb024
+      internalID: 254005920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CircleStage_Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 179
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b69aa4a1aec6844b2f12b7a925b0f4
+      internalID: -503825520
       vertices: []
       indices: 
       edges: []
@@ -149,6 +254,11 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       CircleStage_Atlas_0: -2044070567
+      CircleStage_Atlas_4: 254005920
+      CircleStage_Atlas_5: -503825520
+      CircleStage_Atlas_2: -596803775
+      CircleStage_Atlas_1: 393146110
+      CircleStage_Atlas_3: 1505212402
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
