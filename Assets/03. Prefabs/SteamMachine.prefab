@@ -73,8 +73,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1468636725
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: -84751660, guid: 084cc55c3a5747d4b92ecfec8ca14390, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hotMilkObject: {fileID: 5650855912442994871, guid: 87c68a3fe877f94428c576f1d7ebcf94, type: 3}
   holder: {fileID: 1362400834469142809}
+  isWorking: 0
   timer: 0
 --- !u!1001 &7199995258577241891
 PrefabInstance:

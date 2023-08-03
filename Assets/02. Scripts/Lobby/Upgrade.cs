@@ -18,7 +18,10 @@ public class Upgrade : MonoBehaviour
     {
         upgradeInfo = UpgradeManager.Instance.GetUpgradeInfo(key);
         name.text = upgradeInfo.name;
+
         image.sprite = upgradeInfo.sprite;
+        image.rectTransform.sizeDelta = new Vector3(upgradeInfo.sprite.bounds.size.x*100, upgradeInfo.sprite.bounds.size.y*100, 0);
+        image.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
         switch(upgradeInfo.upgradeType)
         {

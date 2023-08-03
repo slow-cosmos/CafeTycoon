@@ -603,8 +603,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 137}
-  m_SizeDelta: {x: 0, y: 100}
+  m_AnchoredPosition: {x: 0, y: 100}
+  m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &922447362
 MonoBehaviour:
@@ -1648,7 +1648,16 @@ MonoBehaviour:
   upgradePopup: {fileID: 326180509}
   stageObject: {fileID: 8134856524259344421, guid: fe8dfb3088d7ce14c80f4ef8d738fada, type: 3}
   parent: {fileID: 1009875552}
-  maxStage: 2
+  stageSprites:
+  - {fileID: -2044070567, guid: 06e32ee12576b5642bab829cfb00747b, type: 3}
+  - {fileID: 254005920, guid: 06e32ee12576b5642bab829cfb00747b, type: 3}
+  - {fileID: -503825520, guid: 06e32ee12576b5642bab829cfb00747b, type: 3}
+  starSprites:
+  - {fileID: 393146110, guid: 06e32ee12576b5642bab829cfb00747b, type: 3}
+  - {fileID: 1505212402, guid: 06e32ee12576b5642bab829cfb00747b, type: 3}
+  - {fileID: -596803775, guid: 06e32ee12576b5642bab829cfb00747b, type: 3}
+  maxStage: 0
+  curStage: 0
 --- !u!1 &1776741213
 GameObject:
   m_ObjectHideFlags: 0

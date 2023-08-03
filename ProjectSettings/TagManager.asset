@@ -46,3 +46,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Machine
+    uniqueID: 2826330571
+    locked: 0
+  - name: Cup
+    uniqueID: 1831809057
+    locked: 0
+  - name: Recipe
+    uniqueID: 764088187
+    locked: 0
