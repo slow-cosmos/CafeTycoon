@@ -1588,8 +1588,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Time Over
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 68134400c53cf2b46a5e8465c02045c9, type: 2}
+  m_sharedMaterial: {fileID: 493201149158824864, guid: 68134400c53cf2b46a5e8465c02045c9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1613,8 +1613,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 70
-  m_fontSizeBase: 70
+  m_fontSize: 100
+  m_fontSizeBase: 100
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2862,7 +2862,7 @@ GameObject:
   - component: {fileID: 1227931401}
   m_Layer: 0
   m_Name: Cookie
-  m_TagString: Untagged
+  m_TagString: Dough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3106,7 +3106,7 @@ GameObject:
   - component: {fileID: 1326097604}
   m_Layer: 0
   m_Name: Doughnut
-  m_TagString: Untagged
+  m_TagString: Dough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

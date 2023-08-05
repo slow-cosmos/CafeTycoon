@@ -9,6 +9,7 @@ TagManager:
   - SteamMachine
   - Oven
   - Customer
+  - Dough
   layers:
   - Default
   - TransparentFX
