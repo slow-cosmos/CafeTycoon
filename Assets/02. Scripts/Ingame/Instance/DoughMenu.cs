@@ -8,24 +8,45 @@ public enum BakedType
     Burned
 }
 
+public enum DoughType
+{
+    Cookie,
+    Doughnut
+}
+
 public abstract class DoughMenu : MonoBehaviour, ICostInit
 {
     protected Vector3 originPosition;
     [SerializeField] private GameObject trigger; // 트리거 오브젝트
 
+    [SerializeField] private DoughType doughType;
+    public DoughType Dough
+    {
+        get
+        {
+            return doughType;
+        }
+    }
+
     public Sprite[] sprites = new Sprite[2];
     [SerializeField] private BakedType bakedType;
+    public BakedType Baked
+    {
+        get
+        {
+            return bakedType;
+        }
+        set
+        {
+            bakedType = value;
+            GetComponent<SpriteRenderer>().sprite = sprites[(int)bakedType];
+        }
+    }
 
     public int cost;
     public OrderType menu;
 
     public abstract void InitCost();
-
-    public void SetBakedType(BakedType type)
-    {
-        bakedType = type;
-        GetComponent<SpriteRenderer>().sprite = sprites[(int)bakedType];
-    }
 
     public void OnMouseDrag()
     {

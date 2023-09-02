@@ -1921,7 +1921,7 @@ MonoBehaviour:
   coffeeMachines: {fileID: 1320136432}
   steamMachines: {fileID: 2106305443}
   ovens: {fileID: 797638357568939190}
-  mixer: {fileID: 1508101664}
+  mixer: {fileID: 3623925740027852082}
 --- !u!1 &710641665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3266,17 +3266,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3623925740705348398, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
   m_PrefabInstance: {fileID: 3623925740027852081}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1508101664 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3623925740705348369, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
-  m_PrefabInstance: {fileID: 3623925740027852081}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e154ecde6e6e1646b08cb7ac736828d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1532243579
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4567,6 +4556,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+--- !u!114 &3623925740027852082 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 709857384075906753, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
+  m_PrefabInstance: {fileID: 3623925740027852081}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e154ecde6e6e1646b08cb7ac736828d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5151669498825277215
 PrefabInstance:
   m_ObjectHideFlags: 0

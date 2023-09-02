@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trigger: {fileID: 0}
+  doughType: 1
   sprites:
   - {fileID: 71790428, guid: 9fdb8d830f422724eaf24870ba7eb895, type: 3}
   - {fileID: 396934975, guid: 581692e4936b8244ebfea18b70116fab, type: 3}

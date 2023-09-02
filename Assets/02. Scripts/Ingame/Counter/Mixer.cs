@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Mixer : MonoBehaviour, IMakeMenu
 {
+    [SerializeField] Animator animator;
+
     public GameObject juiceObject;
 
     [SerializeField] private Machines machines;
@@ -13,7 +15,6 @@ public class Mixer : MonoBehaviour, IMakeMenu
 
     private void Awake()
     {
-        machines = gameObject.GetComponent<Machines>();
         timer = UpgradeManager.Instance.GetUpgrade("Mixer:Time");
     }
     
@@ -32,6 +33,8 @@ public class Mixer : MonoBehaviour, IMakeMenu
 
     IEnumerator JuiceGenerate()
     {
+        animator.SetInteger("State", 1);
+        
         Debug.Log("주스 생성 시작");
         isWorking = true;
         yield return new WaitForSeconds(timer);
@@ -45,6 +48,8 @@ public class Mixer : MonoBehaviour, IMakeMenu
                 holder.Object = menu;
             }
         }
+
+        animator.SetInteger("State", 0);
 
         isWorking = false;
     }
