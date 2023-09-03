@@ -1216,9 +1216,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 438218247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f567f9714fc9395419d801e34b7b8cde, type: 3}
+  m_Script: {fileID: 11500000, guid: 4aaf3651436c80248a9fafbf00965bd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1152065604}
 --- !u!1 &453568332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,8 +1897,8 @@ Transform:
   m_Children:
   - {fileID: 2106305442}
   - {fileID: 102838097}
-  - {fileID: 1508101663}
   - {fileID: 2017158784005038720}
+  - {fileID: 1508101663}
   - {fileID: 1069995562}
   - {fileID: 23037080}
   - {fileID: 453568335}
@@ -2550,6 +2551,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1152065603}
   - component: {fileID: 1152065602}
+  - component: {fileID: 1152065604}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -2624,6 +2626,26 @@ Transform:
   m_Father: {fileID: 438218249}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1152065604
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1152065601}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 43e1e35c513a30041b81eacfb27f5048, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1169551692
 GameObject:
   m_ObjectHideFlags: 0
@@ -4304,7 +4326,7 @@ Transform:
   - {fileID: 570358622}
   - {fileID: 1277547073}
   m_Father: {fileID: 709460546}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &2017158784005038721
 SortingGroup:
@@ -4504,7 +4526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3623925740705348398, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3623925740705348398, guid: 121b40ab457e2ad48b1e5e3be3674f48, type: 3}
       propertyPath: m_LocalPosition.x
