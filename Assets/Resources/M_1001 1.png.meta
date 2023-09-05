@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 084cc55c3a5747d4b92ecfec8ca14390
+guid: 8142ae9146e34a04bbc3b1677d663e11
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,13 +117,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: M_1002_1 1_0
+      name: M_1001_1
       rect:
         serializedVersion: 2
-        x: 8
-        y: 210
-        width: 67
-        height: 96
+        x: 156
+        y: 25
+        width: 49
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,20 +131,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 157ce703cb80f5e4dbe4d8774828a0da
-      internalID: -84751660
+      spriteID: 928db892ecdc93543b8c8d257bffac0c
+      internalID: -84809205
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: M_1002_1 1_1
+      name: M_1001_2
       rect:
         serializedVersion: 2
-        x: 8
-        y: 111
-        width: 67
-        height: 97
+        x: 158
+        y: 4
+        width: 63
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30ba1dbc29279a44869361ba408d2ce
+      internalID: 1232700048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_1001 1_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 102
+        width: 49
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -152,8 +173,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b499086b1b0f1bf4a890b2b14e1e40a2
-      internalID: -1614179432
+      spriteID: 4fa4208abf3b66d4fa4b5d2112ad2fd4
+      internalID: -1952883667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: M_1001 1_1
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 176
+        width: 61
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e68c4282cc7035f459d5abf3d4ad2b68
+      internalID: 1678495126
       vertices: []
       indices: 
       edges: []
@@ -169,8 +211,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      M_1002_1 1_0: -84751660
-      M_1002_1 1_1: -1614179432
+      M_1001_2: 1232700048
+      M_1001 1_0: -1952883667
+      M_1001_0: -1677177797
+      M_1001 1_1: 1678495126
+      M_1001_1: -84809205
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

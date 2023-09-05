@@ -6,15 +6,26 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
 {
     public GameObject coffeeObject;
 
+    public Animator animator;
+
+    [SerializeField] private Holder holder;
+
     [SerializeField] private Machines machines;
 
     public bool isWorking = false;
     [SerializeField] private float timer;
+    WaitForSeconds waitMachine;
 
     private void Awake()
     {
         machines = gameObject.transform.parent.GetComponent<Machines>();
         timer = UpgradeManager.Instance.GetUpgrade("EspressoMachine:Time");
+        waitMachine = new WaitForSeconds(timer);
+    }
+
+    private void Update()
+    {
+
     }
     
     private void OnMouseDown()
@@ -24,30 +35,42 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
 
     public void MakeMenu()
     {
-        StartCoroutine(CoffeeGenerate());
-    }
-
-    IEnumerator CoffeeGenerate()
-    {
         List<GameObject> emptyList = GetEmptyList();
         if(emptyList.Count != 0)
         {
-            Debug.Log("에스프레소 생성 시작");
             foreach(var machine in emptyList)
             {
-                machine.GetComponent<CoffeeMachine>().isWorking = true;
-            }
-
-            yield return new WaitForSeconds(timer);
-
-            foreach(var machine in emptyList)
-            {
-                Holder holder = machine.gameObject.transform.GetChild(0).GetComponent<Holder>();
-                GameObject menu = Instantiate(coffeeObject, holder.transform);
-                holder.Object = menu;
-                machine.GetComponent<CoffeeMachine>().isWorking = false;
+                CoffeeMachine coffeeMachine = machine.GetComponent<CoffeeMachine>();
+                coffeeMachine.StartCoroutine(coffeeMachine.CoffeeGenerate());
             }
         }
+    }
+
+    public IEnumerator CoffeeGenerate()
+    {
+        animator.SetInteger("State", 1);
+
+        isWorking = true;
+
+        yield return new WaitForSeconds(0.4f); // 애니메이션 기다리기
+
+        animator.SetInteger("State", 2);
+        yield return waitMachine;
+
+        animator.SetInteger("State", 3);
+        yield return new WaitForSeconds(0.1f); // 애니메이션 기다리기
+
+        GameObject menu = Instantiate(coffeeObject, holder.transform);
+
+        holder.Object = menu;
+        isWorking = false;
+
+        while(holder.Object != null)
+        {
+            yield return null;
+        }
+
+        animator.SetInteger("State", 0);
     }
 
     public List<GameObject> GetEmptyList()
