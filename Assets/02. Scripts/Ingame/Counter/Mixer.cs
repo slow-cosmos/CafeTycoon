@@ -34,10 +34,14 @@ public class Mixer : MonoBehaviour, IMakeMenu
     IEnumerator JuiceGenerate()
     {
         animator.SetInteger("State", 1);
-        
-        Debug.Log("주스 생성 시작");
         isWorking = true;
+        yield return new WaitForSeconds(1); // 애니메이션 기다리기
+
+        animator.SetInteger("State", 2);
         yield return new WaitForSeconds(timer);
+
+        animator.SetInteger("State", 3);
+        yield return new WaitForSeconds(1); // 애니메이션 기다리기
 
         List<Holder> emptyList = GetEmptyList();
         if(emptyList.Count != 0)
