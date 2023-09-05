@@ -12,4 +12,4 @@
 [Google Drive](https://drive.google.com/file/d/155BXHdx0IarKK2BMgo-DFKMaPC4n3SR4/view)
 
 ## 게임 플레이 영상
-[Youtube](https://youtu.be/MKMNemduj34)
+[Youtube](https://youtu.be/MKMNemduj34](https://youtu.be/tz-R_zoVCqo)https://youtu.be/tz-R_zoVCqo)
