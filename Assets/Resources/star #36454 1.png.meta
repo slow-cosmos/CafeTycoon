@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e699e8e847a05454eb99116f19668308
+guid: 684682b73c7a465439671fe06afa0324
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,43 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PausePopupUI_Atlas 1_0
+      name: star #36454_0
       rect:
         serializedVersion: 2
-        x: 436
-        y: 2
-        width: 429
-        height: 139
+        x: 158
+        y: 59
+        width: 110
+        height: 118
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 40, z: 40, w: 40}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 638f525b6d919d64a96638dd990b1e44
-      internalID: -841589197
+      spriteID: 2683c958a971d9d47a218489c32dba57
+      internalID: -1637562841
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PausePopupUI_Atlas 1_1
+      name: star #36454 1_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 429
-        height: 139
+        x: 270
+        y: 68
+        width: 110
+        height: 117
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 40, z: 40, w: 40}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144db631f3ecfbd4c84aa8d969c59199
-      internalID: -536798056
+      spriteID: 5b176f4799ce8504397a79ac5da67472
+      internalID: 159960714
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PausePopupUI_Atlas 1_1: -536798056
-      PausePopupUI_Atlas 1_0: -841589197
+      star #36454_0: -1637562841
+      star #36454 1_0: 159960714
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

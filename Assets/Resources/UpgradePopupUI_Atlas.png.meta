@@ -146,7 +146,7 @@ TextureImporter:
         width: 31
         height: 37
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -154,6 +154,90 @@ TextureImporter:
       bones: []
       spriteID: c133df49b8e47144eb8f488889031d6e
       internalID: 1094365401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradePopupUI_Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 219
+        width: 156
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 974dc419d3a63a548926a07ab5e14b90
+      internalID: -67393029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradePopupUI_Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 356
+        width: 101
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 40, y: 27, z: 40, w: 90}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1c690450ed81c24fb2ef1a2906a95dc
+      internalID: -1376075336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradePopupUI_Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 461
+        width: 39
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3321bdf20beecb47bb51f8372862d09
+      internalID: 700721568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UpgradePopupUI_Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 461
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f40239580a1098468c1f6bb1b3e55e1
+      internalID: 955399337
       vertices: []
       indices: 
       edges: []
@@ -169,8 +253,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      UpgradePopupUI_Atlas_2: -67393029
       UpgradePopupUI_Atlas_0: 1614540923
       UpgradePopupUI_Atlas_1: 1094365401
+      UpgradePopupUI_Atlas_3: -1376075336
+      UpgradePopupUI_Atlas_4: 700721568
+      UpgradePopupUI_Atlas_5: 955399337
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

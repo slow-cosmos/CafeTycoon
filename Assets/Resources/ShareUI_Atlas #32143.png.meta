@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e699e8e847a05454eb99116f19668308
+guid: 11311c3c37a446741beab8c6e1788f36
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,43 +117,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PausePopupUI_Atlas 1_0
+      name: ShareUI_Atlas #32143_0
       rect:
         serializedVersion: 2
-        x: 436
-        y: 2
-        width: 429
-        height: 139
+        x: 178
+        y: 441
+        width: 212
+        height: 212
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 40, z: 40, w: 40}
+      border: {x: 90, y: 90, z: 90, w: 90}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 638f525b6d919d64a96638dd990b1e44
-      internalID: -841589197
+      spriteID: 8b85cf6c16d629345868d1eed1ceeaf5
+      internalID: -475482755
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PausePopupUI_Atlas 1_1
+      name: ShareUI_Atlas #32143_1
       rect:
         serializedVersion: 2
-        x: 2
-        y: 2
-        width: 429
-        height: 139
+        x: 675
+        y: 223
+        width: 181
+        height: 76
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 40, y: 40, z: 40, w: 40}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 144db631f3ecfbd4c84aa8d969c59199
-      internalID: -536798056
+      spriteID: 20e5eb52964a5f14ba51f5b81885e922
+      internalID: -1735227405
       vertices: []
       indices: 
       edges: []
@@ -169,8 +169,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      PausePopupUI_Atlas 1_1: -536798056
-      PausePopupUI_Atlas 1_0: -841589197
+      ShareUI_Atlas #32143_0: -475482755
+      ShareUI_Atlas #32143_1: -1735227405
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
