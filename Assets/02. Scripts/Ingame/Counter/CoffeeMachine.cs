@@ -22,11 +22,6 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
         timer = UpgradeManager.Instance.GetUpgrade("EspressoMachine:Time");
         waitMachine = new WaitForSeconds(timer);
     }
-
-    private void Update()
-    {
-
-    }
     
     private void OnMouseDown()
     {

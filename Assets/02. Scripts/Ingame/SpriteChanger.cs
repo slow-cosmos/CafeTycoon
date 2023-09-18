@@ -35,7 +35,7 @@ public class _5DArray
 
 public class SpriteChanger : MonoBehaviour
 {
-    SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     [Header("Cup")]
     public _5DArray[] sprites = new _5DArray[3];
@@ -52,5 +52,11 @@ public class SpriteChanger : MonoBehaviour
         int iceIdx = (int)ingredients[IngredientType.Ice] % 5;
         int creamIdx = (int)ingredients[IngredientType.Cream] % 6;
         spriteRenderer.sprite = sprites[(int)cupType].sprites[mainIdx].sprites[subIdx].sprites[iceIdx].sprites[creamIdx];
+        spriteRenderer.flipX = true;
+    }
+
+    public void InitSprite(CupType cupType)
+    {
+        spriteRenderer.sprite = sprites[(int)cupType].sprites[0].sprites[0].sprites[0].sprites[0];
     }
 }

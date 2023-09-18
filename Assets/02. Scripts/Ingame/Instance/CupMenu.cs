@@ -25,6 +25,8 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
 {
     public delegate void ChangeSprite(CupType cupType, Dictionary ingredients);
     public ChangeSprite changeSprite;
+    public delegate void InitSprite(CupType cupType);
+    public InitSprite initSprite;
 
     protected Vector3 originPosition;
 
@@ -57,6 +59,7 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
         menu = OrderType.None;
 
         changeSprite += GetComponent<SpriteChanger>().ChangeSprite;
+        initSprite += GetComponent<SpriteChanger>().InitSprite;
     }
 
     public void InitCost()
@@ -133,7 +136,7 @@ public class EspressoCup : CupMenu
 
     private void Start()
     {
-        changeSprite(cupType, ingredients);
+        initSprite(cupType);
         gameObject.AddComponent<BoxCollider>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
@@ -180,7 +183,7 @@ public class MugCup : CupMenu
 
     private void Start()
     {
-        changeSprite(cupType, ingredients);
+        initSprite(cupType);
         gameObject.AddComponent<BoxCollider>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
@@ -244,7 +247,7 @@ public class IceCup : CupMenu
 
     private void Start()
     {
-        changeSprite(cupType, ingredients);
+        initSprite(cupType);
         gameObject.AddComponent<BoxCollider>();
         gameObject.GetComponent<BoxCollider>().isTrigger = true;
     }
