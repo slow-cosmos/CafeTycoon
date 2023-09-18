@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3352217498320598149}
   - component: {fileID: 6847239914170186322}
   - component: {fileID: -6015301807555029073}
+  - component: {fileID: 40114974099164126}
   m_Layer: 0
   m_Name: Espresso
   m_TagString: Untagged
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 764088187
-  m_SortingLayer: 3
-  m_SortingOrder: 3
+  m_SortingLayerID: -608496167
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 1378101671, guid: 3297622c5b551024d867443c3e244a02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -134,3 +135,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &40114974099164126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6847239914170186318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f742d48442356418e56b1893744b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

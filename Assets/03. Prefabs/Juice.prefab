@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4852407279925142858}
   - component: {fileID: 7429787603685446649}
   - component: {fileID: 2884174379214808774}
+  - component: {fileID: -3408481773327539954}
   m_Layer: 0
   m_Name: Juice
   m_TagString: Untagged
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 764088187
-  m_SortingLayer: 3
+  m_SortingLayerID: -608496167
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -867767462, guid: 3297622c5b551024d867443c3e244a02, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -131,3 +132,15 @@ MonoBehaviour:
   trigger: {fileID: 0}
   cost: 0
   menu: 0
+--- !u!114 &-3408481773327539954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8838355296848304517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f742d48442356418e56b1893744b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

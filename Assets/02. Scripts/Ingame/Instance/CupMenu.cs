@@ -28,16 +28,10 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
     public delegate void InitSprite(CupType cupType);
     public InitSprite initSprite;
 
-    protected Vector3 originPosition;
-
     [SerializeField] protected GameObject trigger; // 트리거 오브젝트
 
-    public CupType cupType; // 컵 종류
-    public int cost; // 가격
-    public bool isCompleted; // 컵이 완성 됐는지
-    public OrderType menu; // 완성된 메뉴 타입
-
     [SerializeField] protected Dictionary ingredients = new Dictionary(); // 컵에 들어간 재료
+    
     public Dictionary Ingredients
     {
         get
@@ -45,6 +39,12 @@ public abstract class CupMenu : MonoBehaviour, ICostInit, ICostAdd
             return ingredients;
         }
     }
+
+    protected Vector3 originPosition;
+    public CupType cupType; // 컵 종류
+    public int cost; // 가격
+    public bool isCompleted; // 컵이 완성 됐는지
+    public OrderType menu; // 완성된 메뉴 타입
     
     protected virtual void Awake() // 초기화
     {

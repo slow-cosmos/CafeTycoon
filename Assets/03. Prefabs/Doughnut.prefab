@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -3671365838205044828}
   - component: {fileID: -6601222269649403980}
   - component: {fileID: 4066132584036000155}
+  - component: {fileID: 7216485439665767363}
   m_Layer: 0
   m_Name: Doughnut
   m_TagString: Untagged
@@ -73,9 +74,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 764088187
-  m_SortingLayer: 3
-  m_SortingOrder: 4
+  m_SortingLayerID: -608496167
+  m_SortingLayer: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 71790428, guid: 9fdb8d830f422724eaf24870ba7eb895, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -136,3 +137,15 @@ MonoBehaviour:
   bakedType: 0
   cost: 0
   menu: 0
+--- !u!114 &7216485439665767363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3160036302179795029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f742d48442356418e56b1893744b02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
