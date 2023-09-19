@@ -7,26 +7,28 @@ using UnityEngine.Rendering;
 public class SortingManager : MonoBehaviour
 {
     private SpriteRenderer renderer;
+    private SortingGroup sorting = null;
 
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+        sorting = transform.parent.GetComponent<SortingGroup>();
     }
 
     public void OnMouseDown()
     {
-        if(tag == "Cup")
+        if(sorting != null)
         {
-            transform.parent.GetComponent<SortingGroup>().enabled = false;
+            sorting.enabled = false;
         }
         renderer.sortingOrder = 10;
     }
 
     public void OnMouseUp()
     {
-        if(tag == "Cup")
+        if(sorting != null)
         {
-            transform.parent.GetComponent<SortingGroup>().enabled = true;
+            sorting.enabled = true;
         }
         renderer.sortingOrder = 0;
     }

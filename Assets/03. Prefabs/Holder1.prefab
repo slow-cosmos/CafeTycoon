@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6186108497019287019}
   - component: {fileID: 773679565547811656}
   - component: {fileID: 8143561309976585786}
-  - component: {fileID: -5879765621719192057}
   m_Layer: 0
   m_Name: Holder1
   m_TagString: Untagged
@@ -99,14 +98,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
---- !u!210 &-5879765621719192057
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6035900097706023467}
-  m_Enabled: 1
-  m_SortingLayerID: -608496167
-  m_SortingLayer: 2
-  m_SortingOrder: 0

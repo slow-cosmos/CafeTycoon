@@ -3088,6 +3088,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2017158784005038720}
     m_Modifications:
+    - target: {fileID: 1784793484849364355, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2544575760529579050, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5161421662969150240, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -3102,7 +3110,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5556778730878298710, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
       propertyPath: m_SortingOrder
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5556778730878298710, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
       propertyPath: m_SortingLayerID
@@ -3158,7 +3166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7150435817471192392, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9306e8855860d84da5bf2fd770be641, type: 3}
@@ -4410,7 +4418,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2017158784005038720}
   - component: {fileID: 797638357568939190}
-  - component: {fileID: 2017158784005038721}
   m_Layer: 0
   m_Name: Ovens
   m_TagString: Untagged
@@ -4435,17 +4442,6 @@ Transform:
   m_Father: {fileID: 709460546}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!210 &2017158784005038721
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1816163782455511236}
-  m_Enabled: 1
-  m_SortingLayerID: -1468636725
-  m_SortingLayer: 1
-  m_SortingOrder: 0
 --- !u!1001 &2185806770327155745
 PrefabInstance:
   m_ObjectHideFlags: 0
