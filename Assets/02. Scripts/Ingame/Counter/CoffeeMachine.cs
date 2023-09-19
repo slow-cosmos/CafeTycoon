@@ -38,6 +38,7 @@ public class CoffeeMachine : MonoBehaviour, IMakeMenu
                 CoffeeMachine coffeeMachine = machine.GetComponent<CoffeeMachine>();
                 coffeeMachine.StartCoroutine(coffeeMachine.CoffeeGenerate());
             }
+            SoundManager.Instance.PlayEffect("espressomachine");
         }
     }
 

@@ -23,6 +23,7 @@ public class SteamMachine : MonoBehaviour, IMakeMenu
     {
         if(holder.Object == null && isWorking == false)
         {
+            SoundManager.Instance.PlayEffect("steammachine");
             StartCoroutine(HotMilkGenerate());
         }
     }

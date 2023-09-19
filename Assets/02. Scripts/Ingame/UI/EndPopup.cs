@@ -13,6 +13,8 @@ public class EndPopup : MonoBehaviour
 
     private void OnEnable()
     {
+        SoundManager.Instance.PlayEffect("resultstar");
+
         Time.timeScale = 0;
         stageText.text = "Stage " + ChapterManager.Instance.CurChapter.ToString();
         scoreText.text = Score.Instance.CurScore.ToString();
@@ -29,5 +31,6 @@ public class EndPopup : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Lobby");
+        SoundManager.Instance.PlayBgm("Lobby");
     }
 }

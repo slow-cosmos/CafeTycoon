@@ -79,6 +79,7 @@ public class CustomerQueue : MonoBehaviour
 
     private void ComeInCustomer(Holder seat, CustomerType customerType, List<OrderType> orderList)
     {
+        SoundManager.Instance.PlayEffect("guestin");
         switch(customerType)
         {
             case CustomerType.Normal:

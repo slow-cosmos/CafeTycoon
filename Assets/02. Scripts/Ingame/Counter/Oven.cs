@@ -44,6 +44,7 @@ public class Oven : MonoBehaviour, IMakeMenuObject
         yield return new WaitForSeconds(timer);
 
         animator.SetInteger("State", 3);
+        SoundManager.Instance.PlayEffect("ovenmachine");
         Debug.Log("다 구워짐!");
 
         float time = burnedTime;
@@ -68,6 +69,7 @@ public class Oven : MonoBehaviour, IMakeMenuObject
             if(time<=0)
             {
                 animator.SetInteger("State", 4);
+                SoundManager.Instance.PlayEffect("burning");
 
                 GameObject menu = Instantiate(dough, holder.transform);
                 menu.GetComponent<DoughMenu>().Baked = BakedType.Burned;

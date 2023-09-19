@@ -67,6 +67,7 @@ public class StagePopup : MonoBehaviour
     {
         ChapterManager.Instance.CurChapter = stageNum;
         SceneManager.LoadScene("Ingame");
+        SoundManager.Instance.PlayBgm("Ingame");
     }
 
     public void UpgradeButton()

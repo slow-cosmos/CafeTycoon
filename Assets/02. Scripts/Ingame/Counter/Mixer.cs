@@ -28,6 +28,7 @@ public class Mixer : MonoBehaviour, IMakeMenu
 
     public void MakeMenu()
     {
+        SoundManager.Instance.PlayEffect("mixer");
         StartCoroutine(JuiceGenerate());
     }
 

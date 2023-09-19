@@ -30,5 +30,6 @@ public class PausePopup : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Lobby");
+        SoundManager.Instance.PlayBgm("Lobby");
     }
 }

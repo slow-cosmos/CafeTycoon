@@ -33,8 +33,8 @@ public class Cup : MonoBehaviour, IMakeMenu
                     menu.AddComponent<IceCup>();
                     break;
             }
-            
             holder.Object = menu;
+            SoundManager.Instance.PlayEffect("cupset");
         }
     }
 }
