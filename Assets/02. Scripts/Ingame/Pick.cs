@@ -4,15 +4,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class SortingManager : MonoBehaviour
+public class Pick : MonoBehaviour
 {
+    private Transform transform;
     private SpriteRenderer renderer;
     private SortingGroup sorting = null;
 
+    private Vector3 originScale;
+
     private void Awake()
     {
+        transform = GetComponent<Transform>();
         renderer = GetComponent<SpriteRenderer>();
         sorting = transform.parent.GetComponent<SortingGroup>();
+        originScale = transform.localScale;
     }
 
     public void OnMouseDown()
@@ -22,6 +27,7 @@ public class SortingManager : MonoBehaviour
             sorting.enabled = false;
         }
         renderer.sortingOrder = 10;
+        transform.localScale = originScale * 1.2f;
     }
 
     public void OnMouseUp()
@@ -31,5 +37,6 @@ public class SortingManager : MonoBehaviour
             sorting.enabled = true;
         }
         renderer.sortingOrder = 0;
+        transform.localScale = originScale;
     }
 }

@@ -41,7 +41,7 @@ public class CustomerQueue : MonoBehaviour
             {
                 curTime -= Time.deltaTime;
                 gauge.fillAmount = (timeGap - curTime) / timeGap;
-                queueText.text = $"{i+1} / {ChapterManager.Instance.customerQueueData.CustomerList.Count}";
+                queueText.text = $"{i+1}/{ChapterManager.Instance.customerQueueData.CustomerList.Count}";
                 yield return null;
             }
             curTime = timeGap;
